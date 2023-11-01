@@ -1,5 +1,27 @@
 class Solution:
-    # Function to initialize the global variables.
+    def findPath(self, m, n):
+        # code here
+        visited = [[0 for i in range(n)] for i in range(n)]
+        ans = []
+        def helper(i, j, path):
+            if i == n - 1 and j == n - 1:
+                ans.append(path)
+                return
+            if m[i][j] == 0 or visited[i][j] == 1:
+                return
+            visited[i][j] = 1
+            if i > 0:
+                helper(i - 1, j, path + "U")
+            if j > 0:
+                helper(i, j - 1, path + "L")
+            if i < n - 1:
+                helper(i + 1, j, path + "D")
+            if j < n - 1:
+                helper(i, j + 1, path + "R")
+            visited[i][j] = 0
+        helper(0, 0, "")
+        return ans
+    """ # Function to initialize the global variables.
     def setup(self):
         global v
         v = [[0 for i in range(100)] for j in range(100)]
@@ -45,4 +67,4 @@ class Solution:
         ans.sort()
 
         # returning the sorted paths.
-        return ans
+        return ans """
