@@ -12,8 +12,8 @@ class Solution:
 
         n = len(cost)
         
-
-        memo = [-1] * (len(cost) + 1)
+        # memoization code added
+        """ memo = [-1] * (len(cost) + 1)
         def helper(i):
             if i <= 1:
                 return cost[i]
@@ -22,11 +22,11 @@ class Solution:
             option1 = helper(i - 1)
             option2 = helper(i - 2)
             memo[i] = cost[i] + min(option1, option2)
-            return memo[i]
-        n = len(cost) - 1
+            return memo[i] """
         option1 = helper(n - 1)
         option2 = helper(n - 2)
         return min(option1, option2)
+        n = len(cost) - 1
         return min(helper(n), helper(n - 1))
 """     def minCostClimbingStairs(self, cost: List[int]) -> int:
         def helper(cost, i):
@@ -42,4 +42,5 @@ class Solution:
 
 
 sol = Solution()
-print(sol.minCostClimbingStairs([10, 15, 20]))
+# print(sol.minCostClimbingStairs([10, 15, 20]))
+print(sol.minCostClimbingStairs([1,100,1,1,1,100,1,1,100,1]))
