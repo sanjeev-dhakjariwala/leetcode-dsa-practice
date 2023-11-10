@@ -17,3 +17,5 @@ class Solution:
         dp = [-1] * (amount + 1)
         result = recursive_helper(amount)
         return result if result != float("inf") else -1
+sol = Solution()
+print(sol.coinChange([1, 2, 5], 11))
