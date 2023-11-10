@@ -10,8 +10,7 @@ class Solution:
             min_coins = float("inf")
             for coin in coins:
                 subproblem = recursive_helper(amount - coin)
-                if subproblem != float("inf"):
-                    min_coins = min(min_coins, subproblem + 1)
+                min_coins = min(min_coins, subproblem + 1)
             dp[amount] = min_coins
             return min_coins
 
