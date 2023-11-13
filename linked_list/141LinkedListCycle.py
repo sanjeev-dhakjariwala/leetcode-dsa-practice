@@ -1,5 +1,6 @@
 from ListNode import *
 from typing import *
+from linked_list.ListNode import * 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         fast, slow = head, head

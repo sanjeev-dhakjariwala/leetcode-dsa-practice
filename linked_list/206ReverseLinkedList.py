@@ -1,14 +1,19 @@
 from typing import *
-from linked_list.ListNode import *
+from linked_list.ListNode import ListNode, create_linked_list_from_string
+
 
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        if head.next == None:
+        if head is None:
             return head
-        temp = self.reverseList(head.next)
-        head.next.next = head
-        head.next = None
-        return temp
+        def helper(head):
+            if head.next is None:
+                return head
+            temp = helper(head.next)
+            head.next.next = head
+            head.next = None
+            return temp
+        return helper(head)
 
 
 input_string = "1,2,3,4,5"
