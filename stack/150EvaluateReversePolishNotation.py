@@ -1,4 +1,6 @@
 from typing import *
+
+
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
         stack = []
@@ -16,3 +18,7 @@ class Solution:
             else:
                 stack.append(int(c))
         return stack[0]
+
+
+sol = Solution()
+print(sol.evalRPN(["2", "1", "+", "3", "*"]))
