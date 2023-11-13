@@ -1,24 +1,36 @@
-class MyQueue(object):
+class MyQueue:
     def __init__(self):
-        self.in_stk = []
-        self.out_stk = []
+        self.input_stack = []
+        self.output_stack = []
 
-    # Push element x to the back of queue...
     def push(self, x):
-        self.in_stk.append(x)
+        self.input_stack.append(x)
 
-    # Remove the element from the front of the queue and returns it...
     def pop(self):
-        self.peek()
-        return self.out_stk.pop()
+        self.move_elements()
+        if self.output_stack:
+            return self.output_stack.pop()
+        else:
+            return None  # Queue is empty
 
-    # Get the front element...
     def peek(self):
-        if not self.out_stk:
-            while self.in_stk:
-                self.out_stk.append(self.in_stk.pop())
-        return self.out_stk[-1]
+        self.move_elements()
+        if self.output_stack:
+            return self.output_stack[-1]
+        else:
+            return None  # Queue is empty
 
-    # Return whether the queue is empty...
     def empty(self):
-        return not self.in_stk and not self.out_stk
+        return not self.input_stack and not self.output_stack
+
+    def move_elements(self):
+        if not self.output_stack:
+            while self.input_stack:
+                self.output_stack.append(self.input_stack.pop())
+
+myQueue = MyQueue()
+myQueue.push(1)
+myQueue.push(2)
+myQueue.peek()
+myQueue.pop()
+myQueue.empty()
