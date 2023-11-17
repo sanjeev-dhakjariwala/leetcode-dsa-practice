@@ -1,3 +1,4 @@
+from typing import *
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:
         res = [0] * len(temperatures)
@@ -9,3 +10,7 @@ class Solution:
                 res[stackInd] = i - stackInd
             stack.append((t, i))
         return res
+
+
+sol = Solution()
+print(sol.dailyTemperatures([73, 74, 75, 71, 69, 72, 76, 73]))
