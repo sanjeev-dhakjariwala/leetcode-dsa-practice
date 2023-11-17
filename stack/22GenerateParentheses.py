@@ -1,14 +1,14 @@
 from typing import *
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
-        def backtrack(s, left, right):
+        def backtrack(s, open, close):
             if len(s) == 2 * n:
                 result.append(s)
                 return
-            if left < n:
-                backtrack(s + "(", left + 1, right)
-            if right < left:
-                backtrack(s + ")", left, right + 1)
+            if open < n:
+                backtrack(s + "(", open + 1, close)
+            if close < open:
+                backtrack(s + ")", open, close + 1)
 
         result = []
         backtrack("", 0, 0)
