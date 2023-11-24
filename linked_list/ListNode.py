@@ -1,10 +1,7 @@
 class ListNode:
-    def __init__(self, x=-1, next=None):
-        self.val = x
-        self.next = None
-
-
-
+    def __init__(self, val=0, next=None):
+         self.val = val
+         self.next = next
 
 def create_linked_list_from_string(input_string):
     # Split the input_string by commas to get individual values
