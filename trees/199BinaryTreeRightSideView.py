@@ -4,21 +4,19 @@ from trees.TreeNode import TreeNode
 
 
 class Solution:
-    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+    def rightSideView(self, root: TreeNode) -> List[int]:
         res = []
-        q = collections.deque()
-        if root:
-            q.append(root)
+        q = collections.deque([root])
 
         while q:
-            val = []    
+            rightSide = None
 
             for i in range(len(q)):
                 node = q.popleft()
-                val.append(node.val)
-                if node.left:
+                if node:
+                    rightSide = node
                     q.append(node.left)
-                if node.right:
                     q.append(node.right)
-            res.append(val)
+            if rightSide:
+                res.append(rightSide.val)
         return res
