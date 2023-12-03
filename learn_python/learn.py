@@ -1,4 +1,4 @@
-import collections
+from collections import deque,defaultdict
 """ s = "Sanjeev Jha"
 print(s[::-1])
 print(s[0: 5])
@@ -12,6 +12,15 @@ print(arr.pop())
 arr.append(6)
 print(arr) """
 
-queue = collections.deque()
+queue = deque()
+queue.append(1)
+queue.append(2)
+queue.append(2)
+
+doc = defaultdict(list)
+doc["name"].append("Sanjeev")
+doc["name"].append("Naina")
+doc["name"].append("Priyanka")
 print(queue)
+print(doc)
 
