@@ -24,3 +24,6 @@ doc["name"].append("Priyanka")
 print(queue)
 print(doc)
 
+res = ["1("]
+print(res[0][0])
+
