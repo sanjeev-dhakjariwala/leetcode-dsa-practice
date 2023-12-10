@@ -4,16 +4,12 @@ from linked_list.ListNode import ListNode, create_linked_list_from_string
 
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        if head is None:
+        if not head or not head.next:
             return head
-        def helper(head):
-            if head.next is None:
-                return head
-            temp = helper(head.next)
-            head.next.next = head
-            head.next = None
-            return temp
-        return helper(head)
+        temp = self.reverseList(head.next)
+        head.next.next = head
+        head.next = None
+        return temp
 
 
 input_string = "1,2,3,4,5"
