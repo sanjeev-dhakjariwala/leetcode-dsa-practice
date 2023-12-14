@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     def coinChange(self, coins, amount):
         def recursive_helper(amount):
@@ -5,17 +8,17 @@ class Solution:
                 return 0
             if amount < 0:
                 return float("inf")
-            if dp[amount] != -1:
-                return dp[amount]
+
             min_coins = float("inf")
             for coin in coins:
                 subproblem = recursive_helper(amount - coin)
-                min_coins = min(min_coins, subproblem + 1)
-            dp[amount] = min_coins
+                if subproblem != float("inf"):
+                    min_coins = min(min_coins, subproblem + 1)
+
             return min_coins
 
-        dp = [-1] * (amount + 1)
         result = recursive_helper(amount)
         return result if result != float("inf") else -1
+
 sol = Solution()
 print(sol.coinChange([1, 2, 5], 11))
