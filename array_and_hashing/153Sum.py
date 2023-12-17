@@ -8,9 +8,9 @@ class Solution:
         i = 0
         res = []
         while i < n:
-            # if i > 0 and nums[i] == nums[i - 1]:
-            #     i += 1
-            #     continue
+            if i > 0 and nums[i] == nums[i - 1]:
+                i += 1
+                continue
             target = nums[i]
             j = i + 1
             k = n - 1
