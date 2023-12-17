@@ -12,18 +12,21 @@ print(arr.pop())
 arr.append(6)
 print(arr) """
 
-queue = deque()
-queue.append(1)
-queue.append(2)
-queue.append(2)
+# queue = deque()
+# queue.append(1)
+# queue.append(2)
+# queue.append(2)
 
-doc = defaultdict(list)
-doc["name"].append("Sanjeev")
-doc["name"].append("Naina")
-doc["name"].append("Priyanka")
-print(queue)
-print(doc)
+# doc = defaultdict(list)
+# doc["name"].append("Sanjeev")
+# doc["name"].append("Naina")
+# doc["name"].append("Priyanka")
+# print(queue)
+# print(doc)
 
-res = ["1("]
-print(res[0][0])
+# res = ["1("]
+# print(res[0][0])
+
+arr = [1, 2, 3, 4, 5]
+print(arr[0:3])
 
