@@ -19,6 +19,7 @@ class Solution:
 
 
 graph = build_graph([[2, 4], [1, 3], [2, 4], [1, 3]])
+print(print_graph(graph))
 sol = Solution()
 new_graph = sol.cloneGraph(graph)
 print(print_graph(new_graph))
