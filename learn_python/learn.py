@@ -1,4 +1,6 @@
-from collections import deque,defaultdict
+from collections import deque, defaultdict
+import heapq
+
 """ s = "Sanjeev Jha"
 print(s[::-1])
 print(s[0: 5])
@@ -27,6 +29,18 @@ print(arr) """
 # res = ["1("]
 # print(res[0][0])
 
-arr = [1, 2, 3, 4, 5]
-print(arr[0:3])
+""" arr = [1, 2, 3, 4, 5]
+print(arr[0:3]) """
 
+heap = [1, 36, 2, 3]
+heapq.heappush(heap, 5)
+heapq.heapify(heap)
+print(heap)
+""" print(heapq.heappop(heap))
+print(heapq.heappop(heap))
+print(heapq.heappop(heap))
+print(heapq.heappop(heap)) """
+
+arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+arr = [1, 2, 3, 4, 5, 6]
+print(arr)
