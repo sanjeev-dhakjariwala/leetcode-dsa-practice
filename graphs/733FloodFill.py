@@ -5,7 +5,23 @@ class Solution:
     def floodFill(
         self, image: List[List[int]], sr: int, sc: int, color: int
     ) -> List[List[int]]:
-        m = len(image)
+        # if image[sr][sc] == color:
+        #     return image
+
+        m, n = len(image), len(image[0])
+
+        def dfs(i, j, source):
+            if 0 <= i < m and 0 <= j < n and image[i][j] == source:
+                image[i][j] = color
+                dfs(i + 1, j, source)
+                dfs(i, j + 1, source)
+                dfs(i - 1, j, source)
+                dfs(i, j - 1, source)
+
+        dfs(sr, sc, image[sr][sc])
+        return image
+
+        """ m = len(image)
         n = len(image[0])
 
         def helper(i, j, old_col):
@@ -21,9 +37,9 @@ class Solution:
         if image[sr][sc] == color:
             return image
         helper(sr, sc, image[sr][sc])
-        return image
+        return image """
 
 
 sol = Solution()
-print(sol.floodFill([[1, 1, 1], [1, 1, 0], [1, 0, 1]], 1, 1, 2))
+# print(sol.floodFill([[1, 1, 1], [1, 1, 0], [1, 0, 1]], 1, 1, 2))
 print(sol.floodFill([[0, 0, 0], [0, 0, 0]], 0, 0, 0))

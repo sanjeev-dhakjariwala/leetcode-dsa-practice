@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+
+    td {
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      border: 1px solid #000;
+      background-color: #ddd; /* Background color */
+      color: #000; /* Text color */
+    }
+  </style>
+  <title>Flood Fill Visualization</title>
+</head>
+<body>
+
+<h1>Flood Fill Visualization</h1>
+<p>Click on a cell to start the flood fill process.</p>
+
+<table id="imageTable"></table>
+
+<script>
+  // Sample image and parameters
+  let image = [
+    [1, 1, 1],
+    [1, 1, 1],
+    [1, 1, 1]
+  ];
+
+  let m = image.length;
+  let n = image[0].length;
+  let newColor = 1;
+
+  // Function to create the initial UI
+  function createUI() {
+    const table = document.getElementById('imageTable');
+    table.innerHTML = '';
+
+    for (let i = 0; i < m; i++) {
+      const row = table.insertRow();
+      for (let j = 0; j < n; j++) {
+        const cell = row.insertCell();
+        cell.textContent = image[i][j];
+        cell.id = `cell-${i}-${j}`;
+        cell.onclick = function() {
+          floodFill(i, j);
+        };
+      }
+    }
+  }
+
+  // Function to update the UI for a specific cell
+  function updateCellUI(row, col, value) {
+    const cell = document.getElementById(`cell-${row}-${col}`);
+    cell.textContent = value;
+    // You can customize the text color here
+    cell.style.color = value === newColor ? '#fff' : '#000'; // White text for newColor, black text otherwise
+  }
+
+  // Flood fill function
+  async function floodFill(sr, sc) {
+    const originalColor = image[sr][sc];
+    await dfs(sr, sc, originalColor);
+  }
+
+  // Depth-first search
+  async function dfs(r, c, originalColor) {
+    if (r < 0 || r >= m || c < 0 || c >= n || image[r][c] !== originalColor) {
+      return;
+    }
+
+    image[r][c] = newColor;
+    updateCellUI(r, c, newColor);
+
+    // Visualization delay (for better understanding)
+    await new Promise(resolve => setTimeout(resolve, 500));
+    
+    const directions = [[-1, 0], [1, 0], [0, -1], [0, 1]];
+    for (const [dr, dc] of directions) {
+      await dfs(r + dr, c + dc, originalColor);
+    }
+  }
+
+  // Initial UI setup
+  createUI();
+</script>
+
+</body>
+</html>
