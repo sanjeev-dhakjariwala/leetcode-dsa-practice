@@ -1,4 +1,4 @@
-from linked_list.ListNode import *
+from ListNode import *
 class Solution:
     def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
         dummy = ListNode(0, head)
@@ -16,6 +16,7 @@ class Solution:
         # delete
         left.next = left.next.next
         return dummy.next
+    
 input_string = "1,2,3,4,5"
 head = create_linked_list_from_string(input_string)
 rev = Solution().removeNthFromEnd(head, 2)
