@@ -1,4 +1,6 @@
 from typing import *
+
+
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
         slow, fast = 0, 0
@@ -14,3 +16,7 @@ class Solution:
             slow2 = nums[slow2]
             if slow == slow2:
                 return slow
+
+
+sol = Solution()
+print(sol.findDuplicate([1, 3, 4, 2, 2]))
