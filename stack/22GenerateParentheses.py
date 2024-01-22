@@ -13,3 +13,6 @@ class Solution:
         result = []
         backtrack("", 0, 0)
         return result
+
+sol = Solution()
+print(sol.generateParenthesis(3))
