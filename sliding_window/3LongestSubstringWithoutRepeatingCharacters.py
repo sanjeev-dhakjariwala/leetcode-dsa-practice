@@ -14,5 +14,4 @@ class Solution:
 
 
 sol = Solution()
-print(sol.lengthOfLongestSubstring("abcabcbb"))
 print(sol.lengthOfLongestSubstring("pwwkew"))
