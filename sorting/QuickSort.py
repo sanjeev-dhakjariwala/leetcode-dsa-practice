@@ -35,3 +35,8 @@ class Solution:
 
         # returning the partitioning index.
         return i + 1
+
+sol = Solution()
+nums = [4, 1, 3, 9, -7]
+sol.quickSort(nums, 0, len(nums) - 1)
+print(nums)
