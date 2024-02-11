@@ -26,7 +26,7 @@ input_string = "3,2,0,-4"
 head = create_linked_list_from_string(input_string)
 
 # Printing the linked list
-""" current = head
+current = head
 while current:
     print(current.val, end=" -> ")
-    current = current.next """
+    current = current.next
