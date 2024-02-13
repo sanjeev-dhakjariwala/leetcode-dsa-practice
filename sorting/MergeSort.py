@@ -38,7 +38,7 @@ class Solution:
     def mergeSort(self, arr, l, r):
         # code here
         if l < r:
-            m = (l + (r - 1)) // 2
+            m = l + (r - l) // 2
 
             self.mergeSort(arr, l, m)
             self.mergeSort(arr, m + 1, r)
