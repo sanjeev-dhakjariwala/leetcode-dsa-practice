@@ -6,40 +6,42 @@ class Solution:
         if not heights:
             return []
 
-        m, n = len(heights), len(heights[0])
-        pacific_reachable = set()
-        atlantic_reachable = set()
+        rows, cols = len(heights), len(heights[0])
+        pacific_visited = [[False] * cols for _ in range(rows)]
+        atlantic_visited = [[False] * cols for _ in range(rows)]
+        result = []
 
-        def dfs(r, c, reachable):
-            reachable.add((r, c))
+        # Define DFS function to mark cells reachable from ocean
+        def dfs(r, c, visited):
+            visited[r][c] = True
 
-            directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
-
-            for dr, dc in directions:
-                nr, nc = r + dr, c + dc
-
+            for dr, dc in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
+                new_r, new_c = r + dr, c + dc
                 if (
-                    0 <= nr < m
-                    and 0 <= nc < n
-                    and (nr, nc) not in reachable
-                    and heights[nr][nc] >= heights[r][c]
+                    0 <= new_r < rows
+                    and 0 <= new_c < cols
+                    and not visited[new_r][new_c]
+                    and heights[new_r][new_c] >= heights[r][c]
                 ):
-                    dfs(nr, nc, reachable)
+                    dfs(new_r, new_c, visited)
 
-        # DFS from the left and top edges (Pacific Ocean)
-        for i in range(m):
-            dfs(i, 0, pacific_reachable)
-        for j in range(n):
-            dfs(0, j, pacific_reachable)
+        # DFS from cells adjacent to the Pacific Ocean (top and left edges)
+        for i in range(rows):
+            dfs(i, 0, pacific_visited)
+        for j in range(cols):
+            dfs(0, j, pacific_visited)
 
-        # DFS from the right and bottom edges (Atlantic Ocean)
-        for i in range(m):
-            dfs(i, n - 1, atlantic_reachable)
-        for j in range(n):
-            dfs(m - 1, j, atlantic_reachable)
+        # DFS from cells adjacent to the Atlantic Ocean (bottom and right edges)
+        for i in range(rows):
+            dfs(i, cols - 1, atlantic_visited)
+        for j in range(cols):
+            dfs(rows - 1, j, atlantic_visited)
 
-        # Find the cells that are reachable from both oceans
-        result = list(pacific_reachable.intersection(atlantic_reachable))
+        # Find the intersection of cells reachable from both oceans
+        for i in range(rows):
+            for j in range(cols):
+                if pacific_visited[i][j] and atlantic_visited[i][j]:
+                    result.append([i, j])
 
         return result
 

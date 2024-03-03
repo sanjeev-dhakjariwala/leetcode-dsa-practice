@@ -4,63 +4,34 @@ import collections
 
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
-        # if not grid:
-        #     return 0
 
-        # m, n = len(grid), len(grid[0])
-        # fresh_oranges = 0
-        # rotten_oranges = collections.deque()
-
-        # # Count fresh oranges and store the position of rotten oranges
-        # for i in range(m):
-        #     for j in range(n):
-        #         if grid[i][j] == 1:
-        #             fresh_oranges += 1
-        #         elif grid[i][j] == 2:
-        #             rotten_oranges.append((i, j, 0))
-
-        # # Define 4-directional neighbors
-        # directions = [(0, 1), (0, -1), (1, 0), (-1, 0)]
-
-        # minutes_elapsed = 0
-
-        # while rotten_oranges:
-        #     i, j, minutes_elapsed = rotten_oranges.popleft()
-
-        #     for di, dj in directions:
-        #         ni, nj = i + di, j + dj
-        #         if 0 <= ni < m and 0 <= nj < n and grid[ni][nj] == 1:
-        #             grid[ni][nj] = 2
-        #             fresh_oranges -= 1
-        #             rotten_oranges.append((ni, nj, minutes_elapsed + 1))
-
-        # return minutes_elapsed if fresh_oranges == 0 else -1
         if not grid:
             return 0
+    
+        rows, cols = len(grid), len(grid[0])
+        fresh_count = 0
+        rotten_queue = collections.deque()
         
-        m, n = len(grid), len(grid[0])
-        fresh_oranges = 0
-        rotten_oranges = collections.deque()
-
-        for i in range(len(grid)):
-            for j in range(len(grid[0])):
+        # Find initial rotten oranges and count fresh oranges
+        for i in range(rows):
+            for j in range(cols):
                 if grid[i][j] == 1:
-                    fresh_oranges += 1
+                    fresh_count += 1
                 elif grid[i][j] == 2:
-                    rotten_oranges.append((i, j, 0))
+                    rotten_queue.append((i, j, 0))  # (row, col, minutes)
         
-        directions = [(1, 0), (-1, 0), (0, -1), (0, 1)]
-
-        while rotten_oranges:
-            i, j, minutes_elapsed = rotten_oranges.popleft()
-
-            for di, dj in directions:
-                ni, nj = i + di, j + dj
-                if 0 <= ni < m and 0 <= nj < n and grid[ni][nj] == 1:
-                    grid[ni][nj] = 2
-                    fresh_oranges -= 1
-                    rotten_oranges.append((ni, nj, minutes_elapsed + 1))
-        return minutes_elapsed if fresh_oranges == 0 else -1
+        minutes = 0
+        while rotten_queue:
+            row, col, minutes = rotten_queue.popleft()
+            
+            for dr, dc in [(1, 0), (-1, 0), (0, 1), (0, -1)]:
+                new_row, new_col = row + dr, col + dc
+                if 0 <= new_row < rows and 0 <= new_col < cols and grid[new_row][new_col] == 1:
+                    grid[new_row][new_col] = 2  # Mark the fresh orange as rotten
+                    fresh_count -= 1
+                    rotten_queue.append((new_row, new_col, minutes + 1))
+        
+        return minutes if fresh_count == 0 else -1
 
 
 sol = Solution()
