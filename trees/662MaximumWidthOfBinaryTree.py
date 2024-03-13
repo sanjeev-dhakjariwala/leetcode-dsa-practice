@@ -1,4 +1,4 @@
-from trees.TreeNode import *
+from TreeNode import *
 from typing import *
 import collections
 
