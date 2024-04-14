@@ -1,5 +1,6 @@
 from typing import *
 
+
 class Solution:
 
     # def lengthOfLIS(self, nums: List[int]) -> int:
@@ -41,13 +42,18 @@ class Solution:
     #         return dfs(-1, 0)
 
     def lengthOfLIS(self, nums: List[int]) -> int:
-        LIS = [1] * len(nums)
+        if not nums:
+            return 0
 
-        for i in range(len(nums) - 2, -1, -1):
-            for j in range(i + 1, len(nums)):
-                if nums[j] > nums[i]:
-                    LIS[i] = max(LIS[i], 1 + LIS[j])
-        return max(LIS)
+        n = len(nums)
+        dp = [1] * n
+
+        for i in range(1, n):
+            for j in range(i):
+                if nums[i] > nums[j]:
+                    dp[i] = max(dp[i], dp[j] + 1)
+
+        return max(dp)
 
 
 sol = Solution()
