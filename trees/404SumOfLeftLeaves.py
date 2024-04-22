@@ -22,5 +22,5 @@ class Solution:
 
 
 sol = Solution()
-root = deserialize("1,2,3,4,5")
+root = deserialize("4,2,6,3,1,5")
 print(sol.sumOfLeftLeaves(root))

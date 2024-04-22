@@ -5,6 +5,42 @@ class TreeNode:
         self.right = right
 
 
+def deserialize(data):
+    if data == "[]":
+        return None
+    nodes = [
+        None if val == "null" else TreeNode(int(val))
+        for val in data.strip("[]").split(",")
+    ]
+    children = nodes[::-1]
+    root = children.pop()
+    for node in nodes:
+        if node:
+            if children:
+                node.left = children.pop()
+            if children:
+                node.right = children.pop()
+    return root
+
+
+def inorder_traversal(root):
+    if root is None:
+        return []
+    return inorder_traversal(root.left) + [root.val] + inorder_traversal(root.right)
+
+
+# Example usage:
+input_data = "[4,2,6,3,1,5]"
+root = deserialize(input_data)
+print("Inorder Traversal:", inorder_traversal(root))
+
+""" class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
 def deserialize(string):
     if string == "null":
         return None
@@ -27,7 +63,7 @@ def deserialize(string):
             queue.append(node.right)
         i += 1
 
-    return root
+    return root """
 
 
 # Example usage
