@@ -32,15 +32,26 @@ print(arr) """
 """ arr = [1, 2, 3, 4, 5]
 print(arr[0:3]) """
 
-heap = [1, 36, 2, 3]
-heapq.heappush(heap, 5)
-heapq.heapify(heap)
-print(heap)
-""" print(heapq.heappop(heap))
-print(heapq.heappop(heap))
-print(heapq.heappop(heap))
-print(heapq.heappop(heap)) """
+# heap = [1, 36, 2, 3]
+# heapq.heappush(heap, 5)
+# heapq.heapify(heap)
+# print(heap)
+# """ print(heapq.heappop(heap))
+# print(heapq.heappop(heap))
+# print(heapq.heappop(heap))
+# print(heapq.heappop(heap)) """
 
-arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-arr = [1, 2, 3, 4, 5, 6]
-print(arr)
+# arr = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+# arr = [1, 2, 3, 4, 5, 6]
+# print(arr)
+
+q1 = deque()
+q2 = deque()
+
+q1.append(1)
+q1.append(2)
+q1.append(3)
+q2.append(q1.pop())
+
+print(q1)
+print(q2)
