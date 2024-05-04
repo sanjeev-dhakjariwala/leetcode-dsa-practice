@@ -45,13 +45,17 @@ print(arr[0:3]) """
 # arr = [1, 2, 3, 4, 5, 6]
 # print(arr)
 
-q1 = deque()
-q2 = deque()
+# q1 = deque()
+# q2 = deque()
 
-q1.append(1)
-q1.append(2)
-q1.append(3)
-q2.append(q1.pop())
+# q1.append(1)
+# q1.append(2)
+# q1.append(3)
+# q2.append(q1.pop())
 
-print(q1)
-print(q2)
+# print(q1)
+# print(q2)
+
+a = int('00001')
+print(a)
+print(26 ^ 25)
