@@ -21,12 +21,12 @@ def create_linked_list_from_string(input_string):
     return head.next
 
 
-# Example usage:
-input_string = "3,2,0,-4"
-head = create_linked_list_from_string(input_string)
+# # Example usage:
+# input_string = "3,2,0,-4"
+# head = create_linked_list_from_string(input_string)
 
-# Printing the linked list
-current = head
-while current:
-    print(current.val, end=" -> ")
-    current = current.next
+# # Printing the linked list
+# current = head
+# while current:
+#     print(current.val, end=" -> ")
+#     current = current.next
