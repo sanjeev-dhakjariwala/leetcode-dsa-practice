@@ -36,6 +36,8 @@ class Solution:
             dfs(i, cols - 1, atlantic_visited)
         for j in range(cols):
             dfs(rows - 1, j, atlantic_visited)
+        print(atlantic_visited)
+        print(pacific_visited)
 
         # Find the intersection of cells reachable from both oceans
         for i in range(rows):
@@ -55,3 +57,21 @@ heights = [
     [5, 1, 1, 2, 4],
 ]
 print(sol.pacificAtlantic(heights))
+
+"""
+[
+    [True, True, True, True, True],
+    [True, True, True, True, True],
+    [True, True, True, False, False],
+    [True, True, False, False, False],
+    [True, False, False, False, False]
+]
+[
+    [False, False, False, False, True],
+    [False, False, False, True, True],
+    [False, False, True, True, True],
+    [True, True, True, True, True],
+    [True, True, True, True, True]
+]
+
+"""
