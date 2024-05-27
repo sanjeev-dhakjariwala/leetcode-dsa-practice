@@ -3,21 +3,18 @@ from typing import *
 
 class Solution:
     def partition(self, s: str) -> List[List[str]]:
-        def is_palindrome(string):
-            return string == string[::-1]
-
-        def backtrack(start, path):
-            if start == len(s):
-                result.append(path[:])
+        def helper(i, path):
+            if i == len(s):
+                res.append(path)
                 return
-
-            for end in range(start + 1, len(s) + 1):
-                if is_palindrome(s[start:end]):
-                    backtrack(end, path + [s[start:end]])
-
-        result = []
-        backtrack(0, [])
-        return result
+            for j in range(i + 1, len(s) + 1):
+                t = s[i: j]
+                if t == t[::-1]:
+                    helper(j, path + [s[i: j]])
+        
+        res = []
+        helper(0, [])
+        return res
 
 
 sol = Solution()
