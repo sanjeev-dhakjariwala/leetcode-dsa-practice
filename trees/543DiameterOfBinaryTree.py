@@ -1,5 +1,5 @@
-from pyparsing import Optional
-from trees.TreeNode import TreeNode
+from typing import *
+from TreeNode import *
 
 
 class Solution:
@@ -15,3 +15,8 @@ class Solution:
         diameter = [0]  # Create a list to store the diameter value
         helper(root, diameter)
         return diameter[0]
+
+
+sol = Solution()
+root = deserialize("1,null,2,3,4,5")
+print(sol.diameterOfBinaryTree(root))

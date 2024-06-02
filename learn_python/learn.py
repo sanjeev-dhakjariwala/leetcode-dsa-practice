@@ -56,6 +56,15 @@ print(arr[0:3]) """
 # print(q1)
 # print(q2)
 
-a = int('00001')
-print(a)
-print(26 ^ 25)
+# a = int('00001')
+# print(a)
+# print(26 ^ 25)
+
+meetings = [[5,7],[1,3],[9,10]]
+# meetings.sort()
+# print(meetings)
+res = set()
+for meeting in meetings:
+    res.update(range(meeting[0], meeting[1] + 1))
+
+print(res)
