@@ -63,8 +63,11 @@ print(arr[0:3]) """
 meetings = [[5,7],[1,3],[9,10]]
 # meetings.sort()
 # print(meetings)
-res = set()
-for meeting in meetings:
-    res.update(range(meeting[0], meeting[1] + 1))
+# res = set()
+# for meeting in meetings:
+#     res.update(range(meeting[0], meeting[1] + 1))
 
-print(res)
+# print(res)
+
+s = 'a' * 2
+print(s)
