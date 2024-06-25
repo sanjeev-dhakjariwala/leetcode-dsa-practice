@@ -1,17 +1,25 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        charSet = set()
-        l = 0
-        res = 0
+        char_index = {}
+        left = 0
+        max_length = 0
 
-        for r in range(len(s)):
-            while s[r] in charSet:
-                charSet.remove(s[l])
-                l += 1
-            charSet.add(s[r])
-            res = max(res, r - l + 1)
-        return res
+        for right in range(len(s)):
+            
+            # if s[right] in char_index and char_index[s[right]] >= left:
+            if s[right] in char_index and char_index[s[right]] >= left:
+                left = char_index[s[right]] + 1
+            char_index[s[right]] = right
+            max_length = max(max_length, right - left + 1)
+        
+        return max_length
 
 
 sol = Solution()
-print(sol.lengthOfLongestSubstring("pwwkew"))
+# print(sol.lengthOfLongestSubstring("abcabcbb"))
+# print(sol.lengthOfLongestSubstring("pwwkew"))
+print(sol.lengthOfLongestSubstring("abba"))
+
+'''
+This is a two pointer question.
+'''
