@@ -65,4 +65,5 @@ two_dp_problem = [
     "879. Profitable Schemes",
     "1547. Minimum Cost to Cut a Stick",
 ]
+
 print(one_dp_problems[(random.randint(0, len(one_dp_problems) + 1))])

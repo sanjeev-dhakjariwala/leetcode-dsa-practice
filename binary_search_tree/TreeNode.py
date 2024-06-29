@@ -23,7 +23,7 @@ def deserialize(data):
     return root
 
 
-def inorder_traversal(root):
+""" def inorder_traversal(root):
     if root is None:
         return []
     return inorder_traversal(root.left) + [root.val] + inorder_traversal(root.right)
@@ -32,7 +32,7 @@ def inorder_traversal(root):
 # Example usage:
 input_data = "[4,2,6,3,1,5]"
 root = deserialize(input_data)
-# print("Inorder Traversal:", inorder_traversal(root))
+print("Inorder Traversal:", inorder_traversal(root)) """
 
 """ class TreeNode:
     def __init__(self, val=0, left=None, right=None):
