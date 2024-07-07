@@ -69,5 +69,9 @@ meetings = [[5,7],[1,3],[9,10]]
 
 # print(res)
 
-s = 'a' * 2
+""" s = 'a' * 2
+print(s) """
+
+s = "sanjeev"
+s = "".join(sorted(s))
 print(s)

@@ -1,19 +1,21 @@
 from typing import *
+
 class Solution:
     def findMin(self, nums: List[int]) -> int:
-        start, end = 0, len(nums) - 1
-        curr_min = float("inf")
+        n = len(nums)
+        low = 0
+        high = n - 1
 
-        while start < end:
-            mid = (start + end) // 2
-            curr_min = min(curr_min, nums[mid])
-
-            # right has the min
-            if nums[mid] > nums[end]:
-                start = mid + 1
-
-            # left has the  min
+        while low < high:
+            mid = low + (high - low) // 2
+            if nums[mid] > nums[high]:
+                low = mid + 1
             else:
-                end = mid - 1
+                high = mid
 
-        return min(curr_min, nums[start])
+        return nums[low]
+
+
+sol = Solution()
+nums = [3, 4, 5, 6, 1, 2]
+print(sol.findMin(nums))
