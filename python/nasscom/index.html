@@ -1,0 +1,3052 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>DSA Sheet | LearnYard</title>
+
+    <!-- Meta Description -->
+    <meta
+      name="description"
+      content="This sheet contains a comprehensive list of DSA problems categorized topic-wise and pattern-wise, curated by 2 ex-googlers who have solved over 5000+ questions and tried their best to collect the most useful problems out of those."
+    />
+
+    <!-- OG Tags for Social Media Sharing (Facebook, Twitter, etc.) -->
+    <meta property="og:title" content="DSA Sheet | LearnYard" />
+    <meta
+      property="og:description"
+      content="This sheet contains a comprehensive list of DSA problems categorized topic-wise and pattern-wise, curated by 2 ex-googlers who have solved over 5000+ questions and tried their best to collect the most useful problems out of those."
+    />
+    <meta
+      property="og:image"
+      content="https://d3fu8elvld6rb5.cloudfront.net/learnyard.com/img/favicon.png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://d3fu8elvld6rb5.cloudfront.net/learnyard.com/img/favicon.png"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://d3fu8elvld6rb5.cloudfront.net/learnyard.com/css/tailwind.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <style>
+      button.banner-close-btn {
+        padding: 8px;
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 6px;
+      }
+
+      button.banner-close-btn:hover {
+        background: rgba(0, 0, 0, 0.4);
+      }
+    </style>
+    <script>
+      function setActiveLink() {
+        var path = "https://learnyard.com/courses";
+        var navLinks = document.querySelectorAll(".nav-link");
+        navLinks.forEach(function (link) {
+          if (link.getAttribute("href") === path) {
+            link.classList.add("activenavtabs");
+          }
+        });
+      }
+    </script>
+  </head>
+  <body onload="setActiveLink()">
+    <div
+      class="relative tickerContainer w-full py-2 px-4 text-white text-center text-14"
+      style="background-color: #ff1a75; font-weight: 550"
+    >
+      Registration for upcoming
+      <a
+        class="font-bold text-white"
+        href="https://learnyard.com/courses/dsa"
+        rel="noreferrer"
+      
+      >
+        <span style="text-decoration: underline">DSA 4.0</span>
+      </a>
+      batch is now Live. Enrol now for an early bird offer
+      <button class="banner-close-btn" onclick="hideTicker()">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="w-2 h-2"
+          viewBox="0 0 24 24"
+          height="12"
+          width="12"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-width="1.5"
+            fill="white"
+            stroke="white"
+            stroke-linejoin="round"
+            d="M.44,21.44a1.49,1.49,0,0,0,0,2.12,1.5,1.5,0,0,0,2.12,0l9.26-9.26a.25.25,0,0,1,.36,0l9.26,9.26a1.5,1.5,0,0,0,2.12,0,1.49,1.49,0,0,0,0-2.12L14.3,12.18a.25.25,0,0,1,0-.36l9.26-9.26A1.5,1.5,0,0,0,21.44.44L12.18,9.7a.25.25,0,0,1-.36,0L2.56.44A1.5,1.5,0,0,0,.44,2.56L9.7,11.82a.25.25,0,0,1,0,.36Z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+    <header
+      class="sticky top-0 bg-white duration-300 ease-out dark:bg-darktheme z-50 lg:overflow-visible overflow-hidden"
+    >
+      <nav
+        class="flex items-center justify-between container relative py-2 md:py-[10px]"
+      >
+        <div id="logo-container">
+          <a
+            id="logo-area"
+            href="https://learnyard.com/"
+            class="flex w-[119px] md:w-[157px] md:h-[58px] relative z-[999] logo-main duration-100 ease-out dark:bg-darktheme"
+          >
+            <video
+              class="logo-video dark:hidden block"
+              src="https://d3fu8elvld6rb5.cloudfront.net/learnyard.com/img/loader.mp4"
+              muted
+              autoplay
+              playsinline
+            ></video>
+            <video
+              class="logo-video dark:block hidden mix-blend-color-dodge"
+              src="https://d3fu8elvld6rb5.cloudfront.net/learnyard.com/img/loader-dark.mp4 "
+              muted
+              autoplay
+              playsinline
+            ></video>
+          </a>
+        </div>
+
+        <div class="nav-area order-3 min-[1281px]:order-none">
+          <button class="hamburger relative z-[999]">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="nav-wrapper">
+            <ul class="min-[1281px]:flex items-center">
+              <!-- <li class="mb-0 mr-[56px]">
+                <a class="nav-link" href="https://learnyard.com/courses/dsa">
+                  Live DSA Course
+                </a>
+              </li> -->
+              <!-- <li class="mb-0 mr-[56px]">
+                <a class="nav-link" href="">Read</a>
+              </li> -->
+
+              <li class="mb-0 mr-[56px]">
+                <div class="dropdown relative">
+                  <div class="flex items-center gap-1 pr-2 min-[1281px]:pr-0">
+                    <a
+                      class="dropdown-link whitespace-nowrap dark:text-white flex-1"
+                      href="#"
+                    >
+                      Live Courses
+                    </a>
+                    <svg
+                      class="dropdown-link w-2 dark:fill-white cursor-pointer"
+                      fill="black"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </div>
+                  <ul
+                    class="dropdown-menu dark:border dark:border-white/10 bg-white dark:bg-darktheme"
+                  >
+                    <li>
+                      <a
+                        class="nav-menu whitespace-nowrap py-1 block dark:text-white dark:bg-darktheme dark:border dark:border-white/10"
+                        href="https://learnyard.com/courses/dsa"
+                        >DSA (Beginner to Advanced)
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="py-1 nav-menu whitespace-nowrap block dark:text-white dark:bg-darktheme dark:border dark:border-white/10"
+                        href="https://learnyard.com/courses/systemdesign"
+                      >
+                        High Level Design
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="mb-0 mr-[56px]">
+                <div class="dropdown relative">
+                  <div class="flex items-center gap-1 pr-2 min-[1281px]:pr-0">
+                    <a
+                      class="dropdown-link whitespace-nowrap dark:text-white flex-1"
+                      href="#"
+                    >
+                      Read
+                    </a>
+                    <svg
+                      class="dropdown-link w-2 dark:fill-white cursor-pointer"
+                      fill="black"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path
+                        d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"
+                      />
+                    </svg>
+                  </div>
+                  <ul
+                    class="dropdown-menu dark:border dark:border-white/10 bg-white dark:bg-darktheme"
+                  >
+                    <li>
+                      <a
+                        class="nav-menu whitespace-nowrap py-1 block dark:text-white dark:bg-darktheme dark:border dark:border-white/10"
+                        href="https://read.learnyard.com/cpp-fundamentals/"
+                        target="_blank"
+                        >C++ Fundamentals
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="py-1 nav-menu whitespace-nowrap block dark:text-white dark:bg-darktheme dark:border dark:border-white/10"
+                        href="https://read.learnyard.com/java-fundamentals/"
+                        target="_blank"
+                      >
+                        Java Fundamentals
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="py-1 nav-menu whitespace-nowrap block dark:text-white dark:bg-darktheme dark:border dark:border-white/10"
+                        href="https://read.learnyard.com/dsa/"
+                        target="_blank"
+                      >
+                        Exhaustive DSA Course
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="py-1 nav-menu whitespace-nowrap block dark:text-white dark:bg-darktheme dark:border dark:border-white/10"
+                        href="https://read.learnyard.com/low-level-design/"
+                        target="_blank"
+                      >
+                        Low Level Design
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="py-1 nav-menu whitespace-nowrap block dark:text-white dark:bg-darktheme dark:border dark:border-white/10"
+                        href="https://read.learnyard.com/high-level-design/"
+                        target="_blank"
+                      >
+                        High Level Design
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+
+              <li class="mb-0 mr-[56px]">
+                <a
+                  class="nav-link font-bold"
+                  href="https://learnyard.com/practice/dsa/"
+                  target="_parent"
+                  >DSA Sheet</a
+                >
+              </li>
+
+              <li class="mb-0 mr-[56px]">
+                <a
+                  class="nav-link"
+                  href="https://playground.learnyard.com/"
+                  target="_blank"
+                  >Playground</a
+                >
+              </li>
+
+              <li class="mb-0 mr-[56px]">
+                <a class="nav-link" href="https://learnyard.com/team">Team</a>
+              </li>
+              <li class="mb-0 mr-[56px]">
+                <a class="nav-link" href="https://learnyard.com/contact"
+                  >Contact</a
+                >
+              </li>
+              <li class="block md:hidden px-2">
+                <a
+                  href="https://classroom.learnyard.com/auth"
+                  target="_blank"
+                  class="button py-[12px] px-[20px] bg-primary w-full inline-block text-white text-16 leading-[1.5]"
+                >
+                  <div class="relative overflow-hidden">
+                    <span class="button-content">Classroom</span>
+                    <span class="button-content-hover">Classroom</span>
+                  </div>
+                </a>
+              </li>
+            </ul>
+
+            <button
+              class="toggle-dark-mode w-full xl:hidden flex items-center justify-center gap-2 absolute py-2 border-t border-t-black/10 bottom-0 right-0 left-0"
+            >
+              <svg
+                class="dark:block hidden"
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+              >
+                <path
+                  d="M11.75 3.75V1.5a.75.75 0 1 1 1.5 0v2.25a.75.75 0 1 1-1.5 0ZM12.5 6a6 6 0 1 0 6 6 6.006 6.006 0 0 0-6-6Zm-6.53.53a.75.75 0 1 0 1.06-1.06l-1.5-1.5a.75.75 0 1 0-1.06 1.06l1.5 1.5Zm0 10.94-1.5 1.5a.75.75 0 1 0 1.06 1.06l1.5-1.5a.751.751 0 0 0-1.06-1.06ZM18.5 6.75a.75.75 0 0 0 .53-.22l1.5-1.5a.75.75 0 1 0-1.06-1.06l-1.5 1.5a.75.75 0 0 0 .53 1.28Zm.53 10.72a.75.75 0 1 0-1.06 1.06l1.5 1.5a.75.75 0 1 0 1.06-1.06l-1.5-1.5ZM5 12a.75.75 0 0 0-.75-.75H2a.75.75 0 1 0 0 1.5h2.25A.75.75 0 0 0 5 12Zm7.5 7.5a.75.75 0 0 0-.75.75v2.25a.75.75 0 1 0 1.5 0v-2.25a.75.75 0 0 0-.75-.75ZM23 11.25h-2.25a.75.75 0 1 0 0 1.5H23a.75.75 0 1 0 0-1.5Z"
+                  fill="#fff"
+                />
+              </svg>
+              <span class="font-medium text-16 dark:block hidden text-white">
+                Light Mode
+              </span>
+              <svg
+                class="dark:hidden block"
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+              >
+                <path
+                  d="M22.582 14.082a9.829 9.829 0 0 1-3.469 4.96A9.75 9.75 0 0 1 3.5 11.25a9.665 9.665 0 0 1 1.958-5.861 9.829 9.829 0 0 1 4.96-3.47.75.75 0 0 1 .937.938A8.257 8.257 0 0 0 21.65 13.151a.75.75 0 0 1 .938.938l-.005-.007Z"
+                  fill="#190F32"
+                />
+              </svg>
+
+              <span class="font-medium text-16 dark:hidden block">
+                Dark Mode
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="relative mb-0 button-wrapper flex gap-3 items-center flex-1 pr-2 justify-end min-[1281px]:flex-none min-[1281px]:pr-0"
+        >
+          <button class="group relative toggle-dark-mode origin-right">
+            <div class="tdnn day">
+              <div class="moon sun"></div>
+            </div>
+
+            <div
+              class="bg-darktheme py-1 px-2 text-white dark:bg-white hidden xl:block dark:text-darktheme absolute text-14 left-[-145px] top-[120%] duration-300 ease-out opacity-0 invisible group-hover:opacity-100 group-hover:visible"
+            >
+              <div class="absolute -top-1 right-1">
+                <svg width="12" height="9" viewBox="0 0 12 9" fill="none">
+                  <path
+                    class="fill-darktheme dark:fill-white"
+                    d="M5.99986 -2.27131e-07L11.196 9L0.803711 9L5.99986 -2.27131e-07Z"
+                    fill="#0F0B19"
+                  />
+                </svg>
+              </div>
+              <span class="dark:hidden block">Switch to Dark Mode</span>
+              <span class="dark:block hidden">Switch to Light Mode</span>
+            </div>
+          </button>
+          <div class="hidden md:block">
+            <a
+              href="https://classroom.learnyard.com/auth"
+              target="_blank"
+              class="button py-[12px] px-[20px] bg-primary min-w-[160px] inline-block text-white text-16 leading-[1.5]"
+            >
+              <div class="relative overflow-hidden">
+                <span class="button-content">Classroom</span>
+                <span class="button-content-hover">Classroom</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main id="practice-problems"></main>
+    <footer>
+      <section
+        id="contact"
+        class="pt-[40px] md:pt-[73px] pb-[90px] md:pb-[58px] footer-gradient scrollspy-section"
+      >
+        <div class="container text-left md:text-center">
+          <h2
+            class="text-white text-20 leading-[1.3] font-semibold mb-1 md:mb-2"
+          >
+            LearnYard Technologies FZ-LLC
+          </h2>
+          <p class="text-18 text-white leading-[1.44] font-normal">
+            Code, Create, Conquer.
+          </p>
+          <div
+            class="flex items-start md:items-center justify-center md:flex-row flex-col mb-[83px] md:mb-[52px] mt-[59px] md:mt-[79px]"
+          >
+            <div
+              data-modal-target="terms-of-use"
+              data-modal-toggle="terms-of-use"
+              class="mb-3 md:mb-0 mr-[45px] text-16 leading-none text-white font-medium cursor-pointer"
+            >
+              Terms of Service
+            </div>
+            <div
+              id="terms-of-use"
+              tabindex="-1"
+              aria-hidden="true"
+              class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+              style="z-index: 1000"
+            >
+              <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow">
+                  <!-- Modal header -->
+                  <div
+                    class="flex items-center justify-between p-4 border-b rounded-t"
+                  >
+                    <h3
+                      class="text-xl font-semibold"
+                      style="color: rgb(4, 3, 57)"
+                    >
+                      Terms of Service
+                    </h3>
+                    <button
+                      type="button"
+                      class="p-2 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm ml-auto inline-flex justify-center items-center"
+                      data-modal-hide="terms-of-use"
+                    >
+                      <svg
+                        class="w-2 h-2"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 14 14"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                        />
+                      </svg>
+                      <span class="sr-only">Close modal</span>
+                    </button>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="p-6 space-y-6">
+                    <!-- <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                          With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                      </p>
+                      <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                          The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+                      </p> -->
+                    <div class="containerBody is-wrapper clearfix">
+                      <div
+                        data-cat="1"
+                        class="is-section is-section-100 is-box"
+                      >
+                        <div class="is-boxes">
+                          <div class="is-box-centered">
+                            <div
+                              class="is-container container"
+                              style="max-width: 980px"
+                            >
+                              <div class="row clearfix">
+                                <!-- <div class="column full"> 
+                              <h2 style="font-size: 28px; font-weight: 900; line-height: 1.1; text-align: left; color: rgb(10, 9, 89); letter-spacing: 0.16px;">Terms of Use</h2> 
+                             </div>  -->
+                              </div>
+                              <div class="row clearfix">
+                                <div class="column full">
+                                  <div class="spacer height-20"></div>
+                                </div>
+                              </div>
+                              <div class="row clearfix">
+                                <div class="column full">
+                                  <div class="terms-content">
+                                    These Terms of Use set out the terms and
+                                    conditions for use of this LearnYard (
+                                    <b>“Website”</b>) and any content, Public
+                                    Forums, or services offered on or through
+                                    the Website and/or through any mobile
+                                    application(s) ( <b>“Application”</b>)
+                                    (collectively referred to as the
+                                    <b>“Platform”</b>).
+                                    <br />
+                                    <br />
+                                    These Terms of Use apply to end users of the
+                                    Website (referred to as
+                                    <b>“Learners”, “You”, “Your”</b>). These
+                                    Terms of Use, including the Privacy Policy
+                                    and any other terms and conditions published
+                                    on the Platform or communicated to you from
+                                    time to time (collectively referred to as
+                                    the “Agreement”), define the relationship
+                                    and responsibilities between You and Creator
+                                    (as defined herein) in using the Platform.
+                                    Your access to the Platform is subject to
+                                    Your acceptance of this Agreement. Hence,
+                                    please take Your time to read this
+                                    Agreement.
+                                    <br />
+                                    <br />
+                                    When we speak of
+                                    <b>“Creator”, ‘we’, ‘us’</b>, and
+                                    <b>‘our’</b>, we collectively mean LearnYard
+                                    being the creator of this Platform and the
+                                    content/materials/services contained
+                                    therein.
+                                    <br />
+                                    <br />
+                                    By accessing this Platform, You are agreeing
+                                    to be bound by the terms of this Agreement,
+                                    all applicable laws and regulations. From
+                                    time-to-time, versions of the
+                                    above-mentioned policies and terms are made
+                                    available on the Platform for Your reference
+                                    and to understand how we handle Your
+                                    personal information. By using or visiting
+                                    the Platform and services provided to You
+                                    on, from, or through the Platform, You are
+                                    expressly agreeing to the terms of the
+                                    Agreement and any other terms that are
+                                    updated from time to time.
+                                    <br />
+                                    <br />
+                                    If You disagree with any part of this
+                                    Agreement or do not wish to be bound by the
+                                    same, then please do not use the Platform in
+                                    any manner.
+                                    <br />
+                                    <ol>
+                                      <li>
+                                        <b>Access and Registration:</b> If
+                                        You’re an individual You must be at
+                                        least 18 (eighteen) years of age, or, if
+                                        You are between the ages of 13 and 18,
+                                        You must have Your parent or legal
+                                        guardian's permission to use the
+                                        Platform. By using the Platform, You
+                                        are, through Your actions, representing
+                                        and warranting to us that You have
+                                        obtained the appropriate
+                                        consents/permissions to use the
+                                        Platform. If You are under the age of 13
+                                        years or 16 years (depending on your
+                                        country of reisdence), You may neither
+                                        use our Platform in any manner nor may
+                                        You register for any content or services
+                                        offered therein. <br /><br />
+                                        To access any Content (as defined below)
+                                        offered on the Platform, we require You
+                                        to register for the same by providing
+                                        Your name and email address. Please read
+                                        our Privacy Policy to understand how we
+                                        handle Your information. Further, You
+                                        may also be required to make payment of
+                                        a fee to access the Content, if
+                                        applicable. For more information, please
+                                        read our ‘Payments &amp; Refunds’
+                                        section below. You represent that the
+                                        information indicated by You during Your
+                                        enrolment or registration for any
+                                        Content on the Platform, is true and
+                                        complete, that You meet the eligibility
+                                        requirements for use of the Platform and
+                                        the Content offered therein, and You
+                                        agree to update us upon any changes to
+                                        the information by writing to us at the
+                                        contact information provided in the
+                                        ‘Contact Us’ section below. <br /><br />
+                                        For the purpose of this Agreement,
+                                        <b>“Content”</b> shall mean and include
+                                        any course or session (whether
+                                        pre-recorded or live) published by the
+                                        Creator on the Platform, including, but
+                                        not limited to any reference materials
+                                        and text files (if any) offered to You
+                                        as part of the Content. <br /><br />
+                                        When You register or enrol for any
+                                        Content on the Platform, You may also
+                                        have access to discussion forums that
+                                        enables You to exchange Your thoughts,
+                                        knowledge in relation to the Content or
+                                        its subject-matter, with us and other
+                                        registrants to the Content
+                                        <b>(“Public Forum”)</b>. Participating
+                                        in the Public Forum is completely Your
+                                        choice and by registering or enrolling
+                                        to a Content on the Platform, You are
+                                        not obligated to participate in such
+                                        Public Forum. <br /><br />
+                                        We maintain and reserve the right to
+                                        refuse access to the Platform or remove
+                                        content posted by You in the Public
+                                        Forums, at any time without notice to
+                                        You, if, in our opinion, You have
+                                        violated any provision of this
+                                        Agreement. <br /><br />
+                                        Further, to access the Platform and/or
+                                        view the content on the Platform, You
+                                        will need to use a
+                                        <b>“Supported/Compatible Device”</b>
+                                        which means a personal computer, mobile
+                                        phone, portable media player, or other
+                                        electronic device that meets the system
+                                        and compatibility requirements and on
+                                        which You are authorized to operate the
+                                        Platform. The Supported/Compatible
+                                        Devices to access the Platform may
+                                        change from time to time and, in some
+                                        cases, whether a device is (or remains)
+                                        a Supported/Compatible Device may depend
+                                        on software or systems provided or
+                                        maintained by the device manufacturer or
+                                        other third parties. Accordingly,
+                                        devices that are Supported/Compatible
+                                        Devices at one time may cease to be
+                                        Supported/Compatible Devices in the
+                                        future. Thus, kindly make sure that the
+                                        device that You use is compatible with
+                                        any of the systems/software used on the
+                                        Platform to access the content/material
+                                        offered therein.
+                                      </li>
+                                      <br />
+                                      <li>
+                                        <b>License to Use:</b> You are granted a
+                                        limited, non-exclusive license to access
+                                        and view the Content on the Platform for
+                                        Your own personal, non-commercial use
+                                        only. Further, if so allowed on the
+                                        Platform, You may temporarily download
+                                        one copy of any downloadable Content
+                                        [including Creator Content (defined
+                                        below)] on the Platform for personal and
+                                        non-commercial transitory viewing only.
+                                        <br /><br />
+                                        This license does not grant You the
+                                        right to assign or sublicense the
+                                        license granted under this Agreement to
+                                        anyone else. Further, You may not-
+                                        <br />
+                                        <ol type="a">
+                                          <li>
+                                            modify, edit or copy the Content,
+                                            Creator Content or any material made
+                                            available on the Platform; <br />
+                                          </li>
+                                          <li>
+                                            create derivative works or exploit
+                                            any material made available on the
+                                            Platform (including the Content and
+                                            Creator Content) or any portion
+                                            thereof (including, but not limited
+                                            to any copyrighted material,
+                                            trademarks, or other proprietary
+                                            information contained therein) in
+                                            manner that is not permitted under
+                                            this license granted to You; <br />
+                                          </li>
+                                          <li>
+                                            publicly display (commercially or
+                                            non-commercially) the Content,
+                                            Creator Content or any material made
+                                            available on the Platform or
+                                            otherwise use the same for any
+                                            commercial purpose; <br />
+                                          </li>
+                                          <li>
+                                            attempt to decompile or reverse
+                                            engineer any software contained in
+                                            the Platform; <br />
+                                          </li>
+                                          <li>
+                                            remove any copyright or other
+                                            proprietary notations from the
+                                            Content, Creator Content or any
+                                            material made available on the
+                                            Platform; or <br />
+                                          </li>
+                                          <li>
+                                            transfer the any material made
+                                            available on the Platform to another
+                                            person or 'mirror' the same on any
+                                            other server. <br />
+                                          </li>
+                                        </ol>
+                                        For the purpose of this Agreement,
+                                        <b>“Creator Content”</b> shall mean and
+                                        include any audio files, video files,
+                                        audio-visual files, images, text
+                                        materials (including .doc, .docx, and
+                                        .pdfs) (other than the Content) uploaded
+                                        or otherwise published on the Platform
+                                        by the Creator to be accessed by You,
+                                        including, but not limited to any such
+                                        content/material posted by the Creator
+                                        in any Public Forum (defined below).
+                                        <br /><br />
+                                        This license shall automatically
+                                        terminate if You violate any of these
+                                        restrictions and may be terminated by us
+                                        at any time. Upon termination of this
+                                        license granted to You or Your viewing
+                                        of any material on the Platform
+                                        (including Content and Creator Content),
+                                        You must destroy any downloaded
+                                        materials in Your possession (whether in
+                                        electronic or printed format).
+                                      </li>
+                                      <br />
+                                      <li>
+                                        <b>Communications:</b> The Platform
+                                        includes provision and facilitation of
+                                        Public Forums designed to enable You to
+                                        communicate with us and other
+                                        registrants to the Content You have
+                                        registered for. As stated above, use of
+                                        these Public Forums are completely your
+                                        choice and by registering for a Content,
+                                        you are not obligated to participate in
+                                        the Public Forum. However, if You choose
+                                        to participate, You agree to adhere to
+                                        the terms specified in the
+                                        <b>‘Code of Conduct’</b> section
+                                        hereinbelow and such other terms as may
+                                        be published on our Platform. If it
+                                        comes to our notice that Your conduct is
+                                        in violation of the terms of this
+                                        Agreement, then we may terminate or
+                                        suspend Your access to any Public Forums
+                                        at any time, without notice, for any
+                                        reason. You represent and warrant that
+                                        You own and control all rights in and to
+                                        any content (including without
+                                        limitation chats, postings, or
+                                        materials) uploaded or posted by You on
+                                        the Public Forums or anywhere on the
+                                        Platform <b>(“Learner Content”)</b>, or
+                                        that You are licensed to use and
+                                        reproduce such Learner Content. We are
+                                        not responsible for the information that
+                                        You choose to share on the Public
+                                        Forums, or for the actions of other
+                                        users therein. You further understand
+                                        and agree that You, shall be solely
+                                        responsible for the Learner Content
+                                        including its legality, reliability,
+                                        accuracy, and appropriateness, and the
+                                        consequences of its publication. <br />
+                                        <br />
+                                        Further, if you do post content or
+                                        submit any Learner Content on the
+                                        Platform, and unless otherwise indicated
+                                        by You in writing (emails included) to
+                                        us, You hereby grant us a non-exclusive,
+                                        royalty-free, irrevocable, perpetual and
+                                        fully sublicensable rights to use,
+                                        reproduce, modify, adapt, publish,
+                                        translate, create derivative works from,
+                                        distribute, and display such Learner
+                                        Content throughout the world in any
+                                        media. <br />
+                                      </li>
+                                      <br />
+                                      <li>
+                                        <b>Code of Conduct:</b> You agree to the
+                                        following:
+                                        <ol type="a">
+                                          <li>
+                                            <b
+                                              >Legitimate usage of the
+                                              Platform:</b
+                                            >
+                                            You agree to use the Platform only
+                                            for lawful purposes and You are not
+                                            allowed to use our Platform to
+                                            engage in any kind of activity that
+                                            violates any applicable central,
+                                            state, local, federal or
+                                            international law or regulation
+                                            (including, without limitation, any
+                                            laws regarding the export of data or
+                                            software to and from the USA or
+                                            other countries). Also, You agree
+                                            that You will not use the Platform
+                                            in any manner that would disrupt,
+                                            damage or impair the Platform or
+                                            access to it, in any manner,
+                                            including promoting or encouraging
+                                            illegal activity such as hacking,
+                                            cracking or distribution of
+                                            counterfeit software, compromised
+                                            accounts, or cheats or hacks for the
+                                            Platform and conduct of any form of
+                                            fraudulent activity. <br /><br />
+                                          </li>
+                                          <li>
+                                            <b
+                                              >No harmful or dangerous
+                                              content:</b
+                                            >
+                                            Any content which incites or
+                                            promotes violence, that may cause
+                                            physical or emotional harm or that
+                                            may endanger the safety of any
+                                            individual or is otherwise
+                                            objectionable is expressly
+                                            prohibited on the Platform. The
+                                            Platform is to be used only for the
+                                            permitted uses as detailed under
+                                            this Agreement. <br /><br />
+                                          </li>
+                                          <li>
+                                            <b
+                                              >No hateful or defamatory
+                                              content:</b
+                                            >
+                                            We realise that there may be
+                                            instances when there are exchange of
+                                            ideas and opinions which is
+                                            essential in the learning process,
+                                            while we agree that individuals have
+                                            the right to voice their opinion, we
+                                            do not encourage or tolerate any
+                                            form of hate speech or statements
+                                            that are libelous, slanderous,
+                                            threatening, violent, predatory,
+                                            defamatory, or any statement that
+                                            incites hatred against specific
+                                            individuals or groups with respect
+                                            to but not limited to race or ethnic
+                                            origin, country caste, religion,
+                                            disability, gender, age, sexual
+                                            orientation/gender identity etc.
+                                            <br /><br />
+                                          </li>
+                                          <li>
+                                            <b>Violent and graphic content:</b>
+                                            Any content, the sole objective of
+                                            which is to sensationalise, shock or
+                                            disturb individuals is not allowed.
+                                            We do not allow any content that
+                                            promotes terrorist acts or incites
+                                            violence, to be uploaded on the
+                                            Platform in any manner. <br /><br />
+                                          </li>
+                                          <li>
+                                            <b>Harassment and bullying:</b> We
+                                            do not tolerate any form of
+                                            harassment or bullying on the
+                                            Platform and strive to keep the
+                                            Platform a safe space to foster
+                                            learning. Harassment in this case
+                                            would include, without limitation,
+                                            to abusive videos, comments,
+                                            messages, revealing someone’s
+                                            personal information, including
+                                            sensitive personally identifiable
+                                            information of individuals, content
+                                            or comments uploaded in order to
+                                            humiliate someone, sexual harassment
+                                            or sexual bullying in any form.
+                                            <br /><br />
+                                          </li>
+                                          <li>
+                                            <b>Spam:</b> Posting untargeted,
+                                            unwanted and repetitive content,
+                                            comments or messages with an
+                                            intention to spam a Public Forum or
+                                            otherwise the Platform and to drive
+                                            traffic from the Platform to other
+                                            third-party sites is in direct
+                                            violation of this Agreement. Posting
+                                            links to external websites with
+                                            malware and other prohibited sites
+                                            is not allowed. <br /><br />
+                                          </li>
+                                          <li>
+                                            <b>Scams:</b> Any content uploaded
+                                            or posted in order to trick others
+                                            for their own financial gain is not
+                                            allowed and we do not tolerate any
+                                            practices of extortion or blackmail,
+                                            either. <br /><br />
+                                          </li>
+                                          <li>
+                                            <b>Privacy violation:</b> Kindly
+                                            refer to our Privacy Policy to know
+                                            how to protect Your privacy and
+                                            respect the privacy of other Users.
+                                            <br /><br />
+                                          </li>
+                                          <li>
+                                            <b>Impersonation:</b> Impersonating
+                                            another person, including but not
+                                            limited to, another learner, is not
+                                            permitted while using our Platform.
+                                            In this case impersonation would
+                                            mean the intention to cause
+                                            confusion regarding who the real
+                                            person is by pretending to be them
+                                            (such as using names, image,
+                                            documents, certificates etc. not
+                                            belonging to You or not used to
+                                            identify You, or pretending to be a
+                                            company, institute, group etc., by
+                                            using their logo, brand name or any
+                                            distinguishing mark). <br /><br />
+                                          </li>
+                                          <li>
+                                            <b
+                                              >Unauthorized Access or Disabling
+                                              of Platform:</b
+                                            >
+                                            You agree not to (i) use the
+                                            Platform in any manner that could
+                                            disable, overburden, damage, or
+                                            impair the Platform or interfere
+                                            with any other user’s use of the
+                                            Platform; (ii) not to use any manual
+                                            process to monitor or copy any of
+                                            the material on the Platform or for
+                                            any unauthorized purpose; (iii) use
+                                            any device, software, or routine
+                                            that interferes with the proper
+                                            working of the Platform; (iv) attack
+                                            the Platform via a denial-of-service
+                                            attack; (v) attempt to gain
+                                            unauthorized access to, interfere
+                                            with, or disrupt any parts of the
+                                            Platform, the server on which the
+                                            Platform is stored, or any server,
+                                            computer, or database connected to
+                                            or associated with the Platform; and
+                                            (vi) introduce any viruses, trojan
+                                            horses, worms, keystroke loggers,
+                                            malware, or other material which is
+                                            malicious or technologically harmful
+                                            to the Platform. <br /><br />
+                                          </li>
+                                          <li>
+                                            If any violation of the above rules
+                                            of conduct comes to our notice,
+                                            then, we reserve the right to refuse
+                                            Your access to the Platform,
+                                            terminate accounts or remove such
+                                            violating content at any time
+                                            without notice to You. <br /><br />
+                                          </li>
+                                        </ol>
+                                      </li>
+                                      <li>
+                                        <b>Intellectual Property:</b>
+                                        <br /><br />
+                                        We own all information and materials,
+                                        including Content and Creator Content
+                                        (in whatever form or media) provided or
+                                        communicated to You by or on behalf of
+                                        us including but not limited to, the
+                                        Platform, trademarks, trade dress,
+                                        logos, wordmarks, illustrations,
+                                        letters, images, ideas, concepts, the
+                                        layout, design, flow, look and feel of
+                                        the Platform, logos, marks, graphics,
+                                        audio files, video files, any software
+                                        which is owned by or licensed to us,
+                                        instructions embedded in any form of
+                                        digital documents and other data,
+                                        information, or material made available
+                                        to You by us
+                                        <b
+                                          >(“Creator’s Intellectual
+                                          Property”)</b
+                                        >. Creator’s Intellectual Property,
+                                        including the copyrights and trademarks
+                                        contained therein, may not be modified
+                                        by You in any way. You acknowledge and
+                                        agree that You do not acquire any
+                                        ownership rights to Creator’s
+                                        Intellectual Property by use of the
+                                        Platform or any part thereof. You
+                                        acknowledge and agree that the Creator’s
+                                        Intellectual Property is protected by
+                                        the applicable intellectual property
+                                        laws, including international copyright,
+                                        trademark, patent, trade secret and
+                                        other intellectual property or
+                                        proprietary rights laws and any
+                                        unauthorized use, reproduction,
+                                        modification, distribution,
+                                        transmission, republication, display or
+                                        performance of the Creator’s
+                                        Intellectual Property or any component
+                                        thereof is strictly prohibited.
+                                        <br /><br />
+                                      </li>
+                                      <li>
+                                        <b>Feedback:</b> If You submit
+                                        suggestions, ideas, comments, or
+                                        questions containing product feedback
+                                        about any Content, the Platform or any
+                                        part thereof, either through the Public
+                                        Forum or otherwise <b>(“Feedback”)</b>,
+                                        then You grants to us a worldwide,
+                                        non-exclusive, royalty-free, perpetual,
+                                        and irrevocable right to use (and full
+                                        right to sublicense), reproduce, modify,
+                                        adapt, publish, translate, create
+                                        derivative works from, distribute,
+                                        transmit, and display such Feedback in
+                                        any form. You shall have no intellectual
+                                        property right in any Content, Platform
+                                        or any part thereof, as a result of our
+                                        incorporation of Feedback into any
+                                        Content or the Platform. <br /><br />
+                                      </li>
+                                      <li>
+                                        <b>Payments and Refunds:</b> To
+                                        register/enrol for any Content, You may
+                                        need to pay a fee as may be applicable
+                                        <b>(“Content Fee”)</b>. Please refer to
+                                        our Platform to know the pricing.
+                                        Payment of such Content Fee shall be
+                                        processed through third-party payment
+                                        processors. Your payments may be subject
+                                        to applicable taxes, so we suggest that
+                                        You read terms and policies of of such
+                                        third party payment processors to
+                                        understand the same better. Once You
+                                        purchase access to a Content on the
+                                        Platform, the same cannot be cancelled
+                                        and there shall be no refund of the
+                                        Content Fee, unless otherwise stated in
+                                        our Refund Policy. <br /><br />
+                                        As stated above, we use third-party
+                                        service providers to enable You to make
+                                        payment for the purchases made on the
+                                        Platform. Accordingly, it is hereby
+                                        clarified that we do not capture and/or
+                                        store any of your sensitive personal
+                                        information. While making payments
+                                        through such third-party payment
+                                        gateways/service providers kindly ensure
+                                        to read through their terms and
+                                        conditions. <br /><br />
+                                      </li>
+                                      <li>
+                                        <b>Disclaimer:</b> THE PLATFORM IS
+                                        PROVIDED TO YOU "AS IS" AND "AS
+                                        AVAILABLE" AND WITH ALL FAULTS AND
+                                        DEFECTS WITHOUT WARRANTY OF ANY KIND. TO
+                                        THE MAXIMUM EXTENT PERMITTED UNDER
+                                        APPLICABLE LAW, THE CREATOR, ON ITS OWN
+                                        BEHALF AND ON BEHALF OF ITS AFFILIATES
+                                        AND ITS AND THEIR RESPECTIVE LICENSORS
+                                        AND SERVICE PROVIDERS, EXPRESSLY
+                                        DISCLAIMS ALL WARRANTIES, WHETHER
+                                        EXPRESS, IMPLIED, STATUTORY OR
+                                        OTHERWISE, WITH RESPECT TO THE PLATFORM,
+                                        INCLUDING ALL IMPLIED WARRANTIES OF
+                                        MERCHANTABILITY, FITNESS FOR A
+                                        PARTICULAR PURPOSE, TITLE AND
+                                        NON-INFRINGEMENT, AND WARRANTIES THAT
+                                        MAY ARISE OUT OF COURSE OF DEALING,
+                                        COURSE OF PERFORMANCE, USAGE OR TRADE
+                                        PRACTICE. WITHOUT LIMITATION TO THE
+                                        FOREGOING, THE CREATOR PROVIDES NO
+                                        WARRANTY OR UNDERTAKING, AND MAKES NO
+                                        REPRESENTATION OF ANY KIND THAT THE
+                                        PLATFORM OR THE SERVICES OR PRODUCTS
+                                        OFFERED THEREIN WILL MEET YOUR
+                                        REQUIREMENTS, ACHIEVE ANY INTENDED
+                                        RESULTS, BE COMPATIBLE OR WORK WITH ANY
+                                        OTHER SOFTWARE, APPLICATIONS, SYSTEMS OR
+                                        SERVICES, OPERATE WITHOUT INTERRUPTION,
+                                        MEET ANY PERFORMANCE OR RELIABILITY
+                                        STANDARDS OR BE ERROR FREE OR THAT ANY
+                                        ERRORS OR DEFECTS CAN OR WILL BE
+                                        CORRECTED. <br /><br />
+                                        WITHOUT LIMITING THE FOREGOING, THE
+                                        CREATOR MAKES NO REPRESENTATION OR
+                                        WARRANTY OF ANY KIND, EXPRESS OR
+                                        IMPLIED: (I) AS TO THE OPERATION OR
+                                        AVAILABILITY OF THE PLATFORM, OR THE
+                                        INFORMATION, CONTENT, AND MATERIALS OR
+                                        PRODUCTS INCLUDED THEREON; (II) THAT THE
+                                        PLATFORM WILL BE UNINTERRUPTED OR
+                                        ERROR-FREE; (III) AS TO THE ACCURACY,
+                                        RELIABILITY, OR CURRENCY OF ANY
+                                        INFORMATION OR CONTENT PROVIDED THROUGH
+                                        THE PLATFORM; OR (IV) THAT THE PLATFORM,
+                                        ITS SERVERS, THE CONTENT, OR E-MAILS
+                                        SENT FROM OR ON BEHALF OF THE CREATOR
+                                        ARE FREE OF VIRUSES, SCRIPTS, TROJAN
+                                        HORSES, WORMS, MALWARE, TIMEBOMBS OR
+                                        OTHER HARMFUL COMPONENTS. <br /><br />
+                                        SOME JURISDICTIONS DO NOT ALLOW THE
+                                        EXCLUSION OF CERTAIN TYPES OF WARRANTIES
+                                        OR LIMITATIONS ON APPLICABLE STATUTORY
+                                        RIGHTS OF A CONSUMER, SO SOME OR ALL OF
+                                        THE ABOVE EXCLUSIONS AND LIMITATIONS MAY
+                                        NOT APPLY TO YOU. BUT IN SUCH A CASE THE
+                                        EXCLUSIONS AND LIMITATIONS SET FORTH IN
+                                        THIS SECTION SHALL BE APPLIED TO THE
+                                        GREATEST EXTENT ENFORCEABLE UNDER
+                                        APPLICABLE LAW. <br /><br />
+                                      </li>
+                                      <li>
+                                        <b>Limitation of Liability:</b> In no
+                                        event shall the Creator be liable for
+                                        any damages (including, without
+                                        limitation, damages for loss of data or
+                                        profit, or due to business interruption)
+                                        arising out of the use or inability to
+                                        use the Content or any other materials
+                                        on the Platform, even if the Creator or
+                                        any authorized personnel of the Creator
+                                        has been notified orally or in writing
+                                        of the possibility of such damage. Some
+                                        jurisdictions do not allow limitations
+                                        on implied warranties, or limitations of
+                                        liability for consequential or
+                                        incidental damages, so, some or all of
+                                        these limitations may not apply to You.
+                                        <br /><br />
+                                      </li>
+                                      <li>
+                                        <b>Indemnity and Release:</b> You shall
+                                        indemnify and hold harmless the Creator
+                                        and where applicable, its officers,
+                                        directors, agents and employees, from
+                                        any claim or demand, or actions
+                                        including reasonable attorney's fees,
+                                        made by any third party or penalty
+                                        imposed due to or arising out of Your
+                                        breach of this Agreement or any document
+                                        incorporated by reference, or Your
+                                        violation of any law, rules, regulations
+                                        or the rights of a third party.
+                                        <br /><br />
+                                      </li>
+                                      <li>
+                                        <b>Links to Third Party Website:</b>
+                                        Creator has not reviewed all of the
+                                        sites linked to its Platform and is not
+                                        responsible for the contents of any such
+                                        linked site. The inclusion of any link
+                                        does not imply endorsement by the
+                                        Creator of such site. Use of any such
+                                        linked website is at the Your own risk.
+                                        <br /><br />
+                                      </li>
+                                      <li>
+                                        <b>Governing Law and Jurisdiction:</b>
+                                        Any claim relating to the Platform shall
+                                        be governed by the laws of the Creator’s
+                                        home jurisdiction (as provided on the
+                                        Platform) without regard to its conflict
+                                        of law provisions. You agree, as we do,
+                                        to submit to the exclusive jurisdiction
+                                        of the courts at Creator’s home
+                                        jurisdiction. <br /><br />
+                                      </li>
+                                      <li>
+                                        <b>Miscellaneous:</b> <br />
+                                        <ol type="a">
+                                          <li>
+                                            <b
+                                              >Alteration of Platform or
+                                              Amendments to the Conditions:</b
+                                            >
+                                            We reserve the right to make changes
+                                            to our Platform, policies, and this
+                                            Agreement at any time. We will post
+                                            the new terms with a revision date
+                                            indicated at the top or if deemed
+                                            practicable. You should check our
+                                            Platform frequently to see recent
+                                            changes. You will be subject to the
+                                            Agreement and the policies in force
+                                            at the time that You use the
+                                            Platform or any part thereof, unless
+                                            any change to those policies or
+                                            these conditions is required to be
+                                            made by law or government authority
+                                            (in which case it will apply to
+                                            orders previously placed by You). If
+                                            any of these conditions is deemed
+                                            invalid, void, or for any reason
+                                            unenforceable, that condition will
+                                            be deemed severable and will not
+                                            affect the validity and
+                                            enforceability of any remaining
+                                            condition.
+                                          </li>
+                                          <li>
+                                            <b>Waiver:</b> If You breach these
+                                            conditions and we take no action, we
+                                            will still be entitled to use our
+                                            rights and remedies in any other
+                                            situation where You breach these
+                                            conditions.
+                                          </li>
+                                          <li>
+                                            <b>Assignment:</b> You may not
+                                            assign or transfer this Agreement,
+                                            by operation or law or otherwise.
+                                            Any attempt by You to assign or
+                                            transfer this Agreement will be null
+                                            and void.
+                                          </li>
+                                          <li>
+                                            <b>Severability:</b> If any
+                                            provision of this Agreement will be
+                                            adjudged by any court of competent
+                                            jurisdiction to be unenforceable or
+                                            invalid, that provision will be
+                                            limited to the minimum extent
+                                            necessary so that this Agreement
+                                            will otherwise remain in effect.
+                                          </li>
+                                          <li>
+                                            <b
+                                              >Events beyond our reasonable
+                                              control:</b
+                                            >
+                                            We will not be held responsible for
+                                            any delay or failure to comply with
+                                            our obligations under these
+                                            conditions if the delay or failure
+                                            arises from any cause which is
+                                            beyond our reasonable control. This
+                                            condition does not affect Your
+                                            statutory rights.
+                                          </li>
+                                        </ol>
+                                      </li>
+                                      <li>
+                                        <b>Contact Us:</b> If You’ve have
+                                        concerns or queries regarding this
+                                        Agreement, You may write to us by email
+                                        at
+                                        <a href="mailto:support@learnyard.com"
+                                          >support@learnyard.com</a
+                                        >.
+                                      </li>
+                                    </ol>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <style>
+                        .terms-content {
+                          text-align: left;
+                          font-size: 18px;
+                          line-height: 1.6;
+                          color: rgb(4, 3, 57);
+                          letter-spacing: 0.16px;
+                        }
+
+                        .terms-content a {
+                          color: #317ae7 !important;
+                          text-decoration: none;
+                        }
+
+                        .terms-content ol {
+                          text-align: left;
+                          font-size: 18px;
+                          line-height: 1.6;
+                          color: rgb(4, 3, 57);
+                          letter-spacing: 0.16px;
+                        }
+
+                        .terms-content li {
+                          text-align: left;
+                          font-size: 18px;
+                          line-height: 1.6;
+                          color: rgb(4, 3, 57);
+                          letter-spacing: 0.16px;
+                        }
+                      </style>
+                    </div>
+                  </div>
+                  <!-- Modal footer -->
+                  <div
+                    class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600"
+                  >
+                    <button
+                      data-modal-hide="terms-of-use"
+                      type="button"
+                      class="text-white bg-primary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    >
+                      I accept
+                    </button>
+                    <!-- <button data-modal-hide="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Decline</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              data-modal-target="privacy-policy"
+              data-modal-toggle="privacy-policy"
+              class="mb-3 md:mb-0 mr-[45px] text-16 leading-none text-white font-medium cursor-pointer"
+            >
+              Privacy Policy
+            </div>
+            <div
+              id="privacy-policy"
+              tabindex="-1"
+              aria-hidden="true"
+              class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+              style="z-index: 1000"
+            >
+              <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow">
+                  <!-- Modal header -->
+                  <div
+                    class="flex items-center justify-between p-4 border-b rounded-t"
+                  >
+                    <h3
+                      class="text-xl font-semibold"
+                      style="color: rgb(4, 3, 57)"
+                    >
+                      Privacy Policy
+                    </h3>
+                    <button
+                      type="button"
+                      class="p-2 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm ml-auto inline-flex justify-center items-center"
+                      data-modal-hide="privacy-policy"
+                    >
+                      <svg
+                        class="w-2 h-2"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 14 14"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                        />
+                      </svg>
+                      <span class="sr-only">Close modal</span>
+                    </button>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="p-6 space-y-6">
+                    <!-- <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                          With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                      </p>
+                      <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                          The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+                      </p> -->
+                    <div data-cat="1" class="is-section is-section-100 is-box">
+                      <div class="is-boxes">
+                        <div class="is-box-centered">
+                          <div
+                            class="is-container container"
+                            style="max-width: auto"
+                          >
+                            <div class="row clearfix">
+                              <div class="column full">
+                                <div class="spacer height-20"></div>
+                              </div>
+                            </div>
+                            <div class="row clearfix">
+                              <div class="column full">
+                                <div class="privacy-content">
+                                  This Privacy Policy (the
+                                  <b>“Policy”</b>) governs the manner in which
+                                  the Platform collects, uses, maintains and
+                                  discloses information of its users. The Policy
+                                  also describes the practices that We apply to
+                                  such user information, user’s privacy rights
+                                  and choices regarding their information. To
+                                  clarify, this Policy applies to all users of
+                                  the Platform (referred to as
+                                  <b>“Learners”, “You”, “Your”</b>).
+                                  <br />
+                                  <br />
+                                  By accessing and using the Platform, providing
+                                  Your Personal Information, or by otherwise
+                                  signalling Your agreement when the option is
+                                  presented to You, You consent to the
+                                  collection, use, and disclosure of information
+                                  described in this Policy and Terms of Use and
+                                  we disclaim all the liabilities arising
+                                  therefrom. If You do not agree with any
+                                  provisions of this Policy and/or the Terms of
+                                  Use, You should not access or use the Platform
+                                  or engage in communications with us and are
+                                  required to leave the Platform immediately. If
+                                  any information You have provided or uploaded
+                                  on the Platform violates the terms of this
+                                  Policy or Terms of Use, we may be required to
+                                  delete such information upon informing You of
+                                  the same and revoke Your access if required
+                                  without incurring any liability to You.
+                                  Capitalized terms used but not defined in this
+                                  Privacy Policy can be found in our Terms of
+                                  Use. Please read this Policy carefully prior
+                                  to accessing our Platform and using any of the
+                                  services or products offered therein. If you
+                                  have any questions, please contact us at the
+                                  contact information provided below.
+                                  <br />
+                                  <ol>
+                                    <li>
+                                      <b>PERSONAL INFORMATION</b> <br /><br />
+                                      <b>“Personal Information”</b> shall mean
+                                      the information which identifies a Learner
+                                      i.e., first and last name, identification
+                                      number, email address, age, gender,
+                                      location, photograph and/or phone number
+                                      provided at the time of registration or
+                                      any time thereafter on the Platform.
+                                      <br /><br />
+                                      <b>“Sensitive Personal Information”</b>
+                                      shall include (i) passwords and financial
+                                      data (except the truncated last four
+                                      digits of credit/debit card), (ii) health
+                                      data, (iii) official identifier (such as
+                                      biometric data, aadhar number, social
+                                      security number, driver’s license,
+                                      passport, etc.,), (iv) information about
+                                      sexual life, sexual identifier, race,
+                                      ethnicity, political or religious belief
+                                      or affiliation, (v) account details and
+                                      passwords, or (vi) other data/information
+                                      categorized as ‘sensitive personal data’
+                                      or ‘special categories of data’ under the
+                                      Information Technology (Reasonable
+                                      Security Practices and Procedures and
+                                      Sensitive Personal Data or Information)
+                                      Rules, 2011, General Data Protection
+                                      Regulation (GDPR) and / or the California
+                                      Consumer Privacy Act (CCPA)
+                                      <b>(“Data Protection Laws”)</b> and in
+                                      context of this Policy or other equivalent
+                                      / similar legislations. <br /><br />
+                                      Usage of the term
+                                      <b>‘Personal Information’</b> shall
+                                      include
+                                      <b>‘Sensitive Personal Information’</b> as
+                                      may be applicable to the context of its
+                                      usage. <br /><br />
+                                    </li>
+                                    <li>
+                                      <b>INFORMATION WE COLLECT:</b>
+                                      <br /><br />
+                                      We may collect both personal and
+                                      non-personal identifiable information from
+                                      You in a variety of ways, including, but
+                                      not limited to, when You visit our
+                                      Platform, register on the Platform, and in
+                                      connection with other activities,
+                                      services, features or resources we make
+                                      available on our Platform. However, please
+                                      note that-
+                                      <ul style="list-style-type: disc">
+                                        <li>
+                                          We do not ask You for Personal
+                                          Information unless we truly need it;
+                                          like when You are registering for any
+                                          Content on the Platform.
+                                        </li>
+                                        <li>
+                                          We do not share Your Personal
+                                          Information with anyone except to
+                                          comply with the applicable laws,
+                                          develop our products and services, or
+                                          protect our rights.
+                                        </li>
+                                        <li>
+                                          We do not store Personal Information
+                                          on our servers unless required for the
+                                          on-going operation of our Platform.
+                                        </li>
+                                      </ul>
+                                      <br />
+                                      <ol type="a">
+                                        <li>
+                                          <b
+                                            >Personal Identifiable
+                                            Information:</b
+                                          >
+                                          We may collect personal-identifiable
+                                          information such as Your name and
+                                          emails address to enable Your access
+                                          to the Platform and services/products
+                                          offered therein. We will collect
+                                          personal-identifiable information from
+                                          You only if such information is
+                                          voluntarily submitted by You to us.
+                                          You can always refuse to provide such
+                                          personal identification information;
+                                          however, it may prevent You from
+                                          accessing services or products
+                                          provided on the Platform or from
+                                          engaging in certain activities on the
+                                          Platform.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b
+                                            >Non-Personal Identifiable
+                                            Information:</b
+                                          >
+                                          When You interact with our Platform,
+                                          we may collect
+                                          non-personal-identifiable information
+                                          such as the browser name, language
+                                          preference, referring site, and the
+                                          date and time of each user request,
+                                          operating system and the Internet
+                                          service providers utilized and other
+                                          similar information.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Cookies:</b> To enhance User
+                                          experience, our Platform may use
+                                          'cookies'. A cookie is a string of
+                                          information that a website stores on a
+                                          visitor’s computer, and that the
+                                          visitor’s browser provides to the
+                                          website each time the visitor returns
+                                          for record-keeping purposes. You may
+                                          choose to set Your web browser to
+                                          refuse cookies, or to notify You when
+                                          cookies are being sent; however,
+                                          please note that in doing so, some
+                                          parts of the Platform may not function
+                                          properly.
+                                        </li>
+                                      </ol>
+                                      <br />
+                                    </li>
+                                    <li>
+                                      <b
+                                        >HOW WE USE and SHARE THE INFORMATION
+                                        COLLECTED</b
+                                      >
+                                      <br /><br />
+                                      We may collect and use Your Personal
+                                      Information for the following purposes:
+                                      <br /><br />
+                                      <ol type="a">
+                                        <li>
+                                          <b
+                                            >To provide access to our Platform
+                                            and/or the services/products offered
+                                            therein:</b
+                                          >
+                                          We use the Your information as
+                                          collected by us to allow You to access
+                                          the Platform and the services/products
+                                          offered therein, including without
+                                          limitation to provide customer
+                                          service, fulfil purchases through the
+                                          Platform, verify User information and
+                                          to resolve any glitches with our
+                                          Platform. The legal basis for this
+                                          processing is consent or, where
+                                          applicable, our legitimate interests
+                                          in the proper administration of our
+                                          Platform, and/or the performance of a
+                                          contract between You and us.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b
+                                            >To improve our Platform and
+                                            maintain safety:</b
+                                          >
+                                          We use Your information to improve and
+                                          customize the Platform and
+                                          services/products offered by us.
+                                          Further, we also use Your information
+                                          to prevent, detect, investigate, and
+                                          take measures against criminal
+                                          activity, fraud, misuse of or damage
+                                          to our Platform or network, and other
+                                          threats and violations to a third
+                                          party's or our rights and property, or
+                                          the safety of our Users, or others.
+                                          The legal basis for this processing is
+                                          consent or, where applicable, our
+                                          legitimate interests in the proper
+                                          administration of our Platform, and/or
+                                          the performance of a contract between
+                                          You and us.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b
+                                            >To communicate with You or market
+                                            our services/products:</b
+                                          >
+                                          We may use the email address submitted
+                                          by You to communicate with You about
+                                          Your orders on our Platform, our
+                                          offers, new products, services or even
+                                          receive Your feedback on the Platform
+                                          or any services/products offered
+                                          therein. It may also be used to
+                                          respond to Your inquiries, questions,
+                                          and/or other requests. If at any time
+                                          You would like to unsubscribe from
+                                          receiving future emails, please write
+                                          to us at the contact information
+                                          provided below. The legal basis for
+                                          this processing is consent or, where
+                                          applicable, our legitimate interests
+                                          in the proper administration of our
+                                          Platform, and/or the performance of a
+                                          contract between You and us.
+                                          <br /><br />
+                                          We do not use Personal Information for
+                                          making any automated decisions
+                                          affecting or creating profiles other
+                                          than what is described in this Policy.
+                                          <br /><br />
+                                          We do not sell, trade, or otherwise
+                                          exploit Your personal-identifiable
+                                          information to others. Limited to the
+                                          purposes stated hereinabove, we may
+                                          share generic aggregated demographic
+                                          information not linked to any
+                                          personal-identifiable information
+                                          regarding visitors and Users with our
+                                          business partners and trusted
+                                          affiliates.
+                                        </li>
+                                      </ol>
+                                      <br /><br />
+                                    </li>
+                                    <li>
+                                      <b>YOUR CHOICES:</b> <br /><br />
+                                      <ol>
+                                        <li>
+                                          <b
+                                            >Limit the information You
+                                            provide:</b
+                                          >
+                                          You always have an option to choose
+                                          the information You provide to us,
+                                          including the option to update or
+                                          delete Your information. However,
+                                          please note that lack of certain
+                                          information may not allow You access
+                                          to the Platform or any of its
+                                          features, in part or in full. For
+                                          example: information required for Your
+                                          registration on the Platform.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b
+                                            >Limit the communications You
+                                            receive from us:</b
+                                          >
+                                          Further, You will also have the option
+                                          to choose what kind of communication
+                                          You would like to receive from us.
+                                          However, there may be certain
+                                          communications that are required for
+                                          legal or security purposes, including
+                                          changes to various legal agreements,
+                                          that you may not be able to limit.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b
+                                            >Reject Cookies and other similar
+                                            technologies:</b
+                                          >
+                                          You may reject or remove cookies from
+                                          Your web browser; You will always have
+                                          the option to change the default
+                                          settings on Your web browser if the
+                                          same is set to ‘accept cookies’.
+                                          However, please note that some of the
+                                          services/products offered on the
+                                          Platform may not function or be
+                                          available to You, when the cookies are
+                                          rejected, removed or disabled.
+                                        </li>
+                                      </ol>
+                                    </li>
+                                    <br />
+                                    <br />
+                                    <li>
+                                      <b>YOUR RIGHTS:</b> <br /><br />
+                                      In general, all Learners have the rights
+                                      specified herein this section. However,
+                                      depending on where you are situated, you
+                                      may have certain specific rights in
+                                      respect of your Personal Information
+                                      accorded by the laws of the country you
+                                      are situated in. To understand
+                                      <b><u>Your rights</u></b
+                                      >, please refer to the
+                                      <b
+                                        ><u
+                                          >Country Specific Additional Rights</u
+                                        ></b
+                                      >
+                                      below. <br /><br />
+                                      If you are a Learner, you may exercise any
+                                      of these rights by using the options
+                                      provided to you within the Platform upon
+                                      your login. If however, you are facing any
+                                      issues or require any clarifications, you
+                                      can always write to us at the address
+                                      noted in the <b>‘Grievances’</b> section
+                                      below, and we will address your concerns
+                                      to the extent required by the applicable
+                                      law.
+                                      <ol type="a">
+                                        <li>
+                                          <b
+                                            >Right to Confirmation and
+                                            Access:</b
+                                          >
+                                          You have the right to get confirmation
+                                          and access to your Personal
+                                          Information that is with us along with
+                                          other supporting information.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Right to Correction:</b> You have
+                                          the right to ask us to rectify your
+                                          Personal Information that is with us
+                                          that you think is inaccurate. You also
+                                          have the right to ask us to update
+                                          your Personal Information that you
+                                          think is incomplete or out-of-date.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Right to be Forgotten:</b> You have
+                                          the right to restrict or prevent the
+                                          continuing disclosure of your Personal
+                                          Information under certain
+                                          circumstances.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Right to Erasure:</b> If you wish
+                                          to withdraw/remove your Personal
+                                          Information from our Platform, you
+                                          have the right to request erasure of
+                                          your Personal Information from our
+                                          Platform. However, please note that
+                                          such erasure will remove all your
+                                          Personal Information from our Platform
+                                          (except as specifically stated in this
+                                          Policy) and may result in deletion of
+                                          your account on the Platform
+                                          permanently, and the same will not be
+                                          retrievable.
+                                        </li>
+                                      </ol>
+                                      <br />
+                                      Remember, you are entitled to exercise
+                                      your rights as stated above only with
+                                      respect to your information, including
+                                      Personal Information, and not that of
+                                      other Learners. Further, when we receive
+                                      any requests or queries over email to the
+                                      address specified in the ‘Grievances’
+                                      section below, then, as per the applicable
+                                      Data Protection Laws, we may need to ask
+                                      you a few additional information to verify
+                                      your identity in association with the
+                                      Platform and the request received.
+                                    </li>
+                                    <br />
+                                    <li>
+                                      <b>PROTECTION OF YOUR INFORMATION:</b>
+                                      <br /><br />
+                                      We take all measures reasonably necessary
+                                      to protect against the unauthorized
+                                      access, use, alteration or destruction of
+                                      Personal Information or such other data on
+                                      the Platform. Our disclosure of any such
+                                      information is limited to – <br />
+                                      <ol type="a">
+                                        <li>
+                                          our employees, contractors and
+                                          affiliated organizations (if any) that
+                                          (i) need to know that information in
+                                          order to process it on our behalf or
+                                          to provide services available on our
+                                          Platform, and (ii) that have agreed
+                                          not to disclose it to others.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          a response to a court order, or other
+                                          governmental request. Without
+                                          imitation to the foregoing, we reserve
+                                          the right to disclose such information
+                                          where we believe in good faith that
+                                          such disclosure is necessary to –
+                                          <ol type="i">
+                                            <li>
+                                              comply with applicable laws,
+                                              regulations, court orders,
+                                              government and law enforcement
+                                              agencies’ requests;
+                                            </li>
+                                            <br />
+                                            <li>
+                                              protect and defend a third party's
+                                              or our rights and property, or the
+                                              safety of our users, our
+                                              employees, or others; or
+                                            </li>
+                                            <br />
+                                            <li>
+                                              prevent, detect, investigate and
+                                              take measures against criminal
+                                              activity, fraud and misuse or
+                                              unauthorized use of our Platform
+                                              and/or to enforce our Terms of Use
+                                              or other agreements or policies.
+                                            </li>
+                                          </ol>
+                                          To the extent permitted by law, we
+                                          will attempt to give You prior notice
+                                          before disclosing Your information in
+                                          response to such a request.
+                                        </li>
+                                      </ol>
+                                      <br />
+                                    </li>
+                                    <li>
+                                      <b>THIRD PARTY WEBSITES</b> <br /><br />
+                                      You may find links to the websites and
+                                      services of our partners, suppliers,
+                                      advertisers, sponsors, licensors and other
+                                      third parties. The content or links that
+                                      appear on these sites are not controlled
+                                      by us in any manner and we are not
+                                      responsible for the practices employed by
+                                      such websites. Further, these
+                                      websites/links thereto, including their
+                                      content, may be constantly changing and
+                                      the may have their own terms of use and
+                                      privacy policies. Browsing and interaction
+                                      on any other website, including websites
+                                      which have a link to our Site, is subject
+                                      to that terms and policies published on
+                                      such websites.
+                                    </li>
+                                    <br />
+                                    <br />
+                                    <li>
+                                      <b>CROSS-BORDER DATA TRANSFER</b>
+                                      <br /><br />
+                                      Your information including any Personal
+                                      Information is stored, processed, and
+                                      transferred in and to the Amazon Web
+                                      Service (AWS) servers and databases
+                                      located in India. We may also store,
+                                      process, and transfer information in and
+                                      to servers in other countries depending on
+                                      the location of our affiliates and service
+                                      providers. <br /><br />
+                                      Please note that these countries may have
+                                      differing (and potentially less stringent)
+                                      privacy laws and that Personal Information
+                                      can become subject to the laws and
+                                      disclosure requirements of such countries,
+                                      including disclosure to governmental
+                                      bodies, regulatory agencies, and private
+                                      persons, as a result of applicable
+                                      governmental or regulatory inquiry, court
+                                      order or other similar process.
+                                      <br /><br />
+                                      If you use our Platform from outside
+                                      India, including in the USA, EU, EEA, and
+                                      UK, your information may be transferred
+                                      to, stored, and processed in India. By
+                                      accessing our Platform or otherwise giving
+                                      us information, you consent to the
+                                      transfer of information to India and other
+                                      countries outside your country of
+                                      residence.
+                                    </li>
+                                    <br />
+                                    <br />
+                                    <li>
+                                      <b
+                                        >DURATION FOR WHICH YOUR INFORMATION IS
+                                        STORED</b
+                                      >
+                                      <br /><br />
+                                      We will retain Your information for as
+                                      long as it is required for us to retain
+                                      for the purposes stated hereinabove,
+                                      including for the purpose of complying
+                                      with legal obligation or business
+                                      compliances. <br /><br />
+                                      Further, please note that we may not be
+                                      able to delete all communications or
+                                      photos, files, or other documents publicly
+                                      made available by you on the Platform (for
+                                      example: comments, feedback, etc.),
+                                      however, we shall anonymize your Personal
+                                      Information in such a way that you can no
+                                      longer be identified as an individual in
+                                      association with such information made
+                                      available by you on the Platform. We will
+                                      never disclose aggregated or de-identified
+                                      information in a manner that could
+                                      identify you as an individual.
+                                      <br /><br />
+                                      Note: If you wish to exercise any of your
+                                      rights (as specified in
+                                      <b>‘Your Rights’</b> section below) to
+                                      access, modify and delete any or all
+                                      information stored about you, then you may
+                                      do so by using the options provided within
+                                      the Platform. You can always write to us
+                                      at the email address specified in the
+                                      ‘Grievances’ section below
+                                    </li>
+                                    <br />
+                                    <br />
+                                    <li>
+                                      <b>MODIFICATION TO PRIVACY POLICY:</b>
+                                      <br /><br />
+                                      We may modify, revise or change our Policy
+                                      from time to time; when we do, we will
+                                      revise the ‘updated date’ at the beginning
+                                      of this page. We encourage You to check
+                                      our Platform frequently to see the recent
+                                      changes. Unless stated otherwise, our
+                                      current Policy applies to all information
+                                      that we have about You.
+                                    </li>
+                                    <br />
+                                    <li>
+                                      <b>GRIEVANCES:</b> <br /><br />
+                                      If you have any questions about this
+                                      Policy, wish to exercise your rights,
+                                      concerns about privacy or grievances,
+                                      please write to us with a thorough
+                                      description via email to
+                                      <a href="mailto:support@learnyard.com"
+                                        >support@learnyard.com</a
+                                      >.
+                                    </li>
+                                  </ol>
+                                  <h4 style="text-align: center">
+                                    <b>COUNTRY SPECIFIC ADDITIONAL RIGHTS</b>
+                                  </h4>
+                                  <ol type="A">
+                                    <li>
+                                      <b
+                                        >TERMS APPLICABLE IF YOU ARE AN INDIAN
+                                        RESIDENT</b
+                                      >
+                                      <br /><br />
+                                      <b><u>Your Rights:</u></b> If you are
+                                      located in India, you may have the
+                                      following rights under the Personal Data
+                                      Protection Bill (PDPB) when it becomes a
+                                      legislation. All requests can be made by
+                                      using the option provided to you within
+                                      the Platform upon your login. You may also
+                                      write to us as stated in the
+                                      <b>“Grievances”</b> section above, and we
+                                      will address you concerns to the extent
+                                      required by law. <br /><br />
+                                      <ol>
+                                        <li>
+                                          <b
+                                            >Right to Confirmation and
+                                            Access:</b
+                                          >
+                                          You have the right to get confirmation
+                                          and access to your Personal
+                                          Information that is with us along with
+                                          other supporting information.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Right to Correction:</b> You have
+                                          the right to ask us to rectify your
+                                          Personal Information that is with us
+                                          that you think is inaccurate. You also
+                                          have the right to ask us to update
+                                          your Personal Information that you
+                                          think is incomplete or out-of-date.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Right to Data Portability:</b> You
+                                          have the right to ask that we transfer
+                                          the Personal Information you gave us
+                                          to another organisation, or to you,
+                                          under certain circumstances.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Right to be Forgotten:</b> You have
+                                          the right to restrict or prevent the
+                                          continuing disclosure of your Personal
+                                          Information under certain
+                                          circumstances.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Right to Erasure:</b> If you wish
+                                          to withdraw/remove your Personal
+                                          Information from our Platform, you
+                                          have the right to request erasure of
+                                          your Personal Information from our
+                                          Platform. However, please note that
+                                          such erasure will remove all your
+                                          Personal Information from our Platform
+                                          (except as specifically stated in this
+                                          Policy) and may result in deletion of
+                                          your account on the Platform
+                                          permanently, and the same will not be
+                                          retrievable.
+                                        </li>
+                                      </ol>
+                                      <br />
+                                    </li>
+                                    <li>
+                                      <b
+                                        >TERMS APPLICABLE IF YOU ARE A RESIDENT
+                                        OF UNITED KINGDOM (UK), A EUROPEAN UNION
+                                        (EU) COUNTRY OR EUROPEAN ECONOMIC AREA
+                                        (EEA)</b
+                                      >
+                                      <br /><br />
+                                      <b><u>Your Rights:</u></b> If you are
+                                      located in the United Kingdom (UK) or
+                                      European Union (EU) or European Economic
+                                      Area (EEA), you have the following rights
+                                      under the UK and EU General Data
+                                      Protection Regulation (GDPR) respectively.
+                                      All requests should be sent to the address
+                                      noted in the <b>“Grievances”</b> section
+                                      above, and we will fulfil requests to the
+                                      extent required by applicable law.
+                                      <ol>
+                                        <li>
+                                          <b
+                                            >Right to access Your Personal
+                                            Information:</b
+                                          >
+                                          You have the right to receive
+                                          confirmation as to whether or not
+                                          Personal Information concerning you is
+                                          being processed and, where that is the
+                                          case, access to the Personal
+                                          Information can be sought;
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Right to Rectification:</b> Our
+                                          goal is to keep your Personal
+                                          Information accurate, current and
+                                          complete. Please contact us if you
+                                          believe your information is inaccurate
+                                          or incomplete;
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Right to Erasure:</b> In some
+                                          cases, you have a legal right to
+                                          request that we erase your Personal
+                                          Information;
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Right to object to Processing:</b>
+                                          You have the right to object to our
+                                          processing of your Personal
+                                          Information under certain conditions;
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Right to restrict Processing:</b>
+                                          You have the right to request that we
+                                          restrict the processing of your
+                                          Personal Information, under certain
+                                          conditions;
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Right to Data Portability:</b> You
+                                          have the right to request that we
+                                          transfer the data that we have
+                                          collected to another organization, or
+                                          directly to you, under certain
+                                          conditions;
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b
+                                            >Right to make a complaint to a
+                                            government supervisory authority:</b
+                                          >
+                                          If you believe we have not processed
+                                          your Personal Information in
+                                          accordance with applicable provisions
+                                          of the GDPR, we encourage you to
+                                          contact us at email address provided
+                                          in the <b>‘Grievances’</b> section
+                                          above. You also have the right to make
+                                          a GDPR complaint to the relevant
+                                          Supervisory Authority or seek a remedy
+                                          through the courts. A list of
+                                          Supervisory Authorities is available
+                                          at:
+                                          https://edpb.europa.eu/about-edpb/board/members_en.
+                                          If you need further assistance
+                                          regarding your rights, please contact
+                                          us using the contact information
+                                          provided below, and we will consider
+                                          your request in accordance with
+                                          applicable law. You can identify the
+                                          supervising authority of your concern
+                                          by visiting
+                                          https://edpb.europa.eu/about-edpb/board/members_en.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b
+                                            >Right to not be subject to
+                                            automated decision-making, including
+                                            profiling:</b
+                                          >
+                                          You have the right not to be subject
+                                          to a decision based solely on
+                                          automated processing, including
+                                          profiling, which produces legal or
+                                          similarly significant effects
+                                          concerning you.
+                                        </li>
+                                      </ol>
+                                      <br />
+                                      We collect and process Personal
+                                      Information about you only where we have a
+                                      legal rationale to do so. Specific legal
+                                      rationale applied for the same will depend
+                                      on the type of Personal Information
+                                      collected and the context in which the
+                                      same is being processed, including the
+                                      Services involved. <br /><br />
+                                    </li>
+                                    <li>
+                                      <b
+                                        >TERMS APPLICABLE IF YOU ARE A
+                                        CALIFORNIA STATE RESIDENT
+                                      </b>
+                                      <br /><br />
+                                      If you are a California state resident,
+                                      then you have the following rights to the
+                                      extent, and in the manner, set out in the
+                                      CCPA: <br /><br />
+                                      <ol>
+                                        <li>
+                                          The right to access the Personal
+                                          Information that we hold on you;
+                                        </li>
+                                        <li>
+                                          The right to know what Personal
+                                          Information we intend on collecting
+                                          from them before the point of
+                                          collection;
+                                        </li>
+                                        <li>
+                                          The right to opt in or out of
+                                          marketing, analytics, and other
+                                          similar activities;
+                                        </li>
+                                        <li>
+                                          The right to equal services without
+                                          discrimination; and
+                                        </li>
+                                        <li>
+                                          The right to request deletion of
+                                          Personal Information.
+                                        </li>
+                                      </ol>
+                                      <br />
+                                      The above rights, the manner in which you
+                                      can exercise the same and the category of
+                                      and the manner in which we collect your
+                                      information, are detailed below.
+                                    </li>
+                                  </ol>
+                                  <ol>
+                                    <li>
+                                      <b>CCPA NOTICE AT COLLECTION:</b>
+                                      <br /><br />
+                                      For purposes of the CCPA, in collecting
+                                      the information described above, we
+                                      collect the categories of Personal
+                                      Information listed below from you:
+                                      <br /><br />
+                                      <ol type="a">
+                                        <li>
+                                          <b>Identifiers:</b> We may collect
+                                          your name, email address, mobile
+                                          number, username, unique personal
+                                          identifier, and Internet Protocol (IP)
+                                          address. We use Identifiers as set
+                                          forth in the “How We Use and Share the
+                                          Information Collected” section of this
+                                          Policy, like your name, contact
+                                          information, and device and online
+                                          identifiers.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b
+                                            >Characteristics of Personal
+                                            Information described in the
+                                            California Customer Records
+                                            statute:</b
+                                          >
+                                          We may collect your name, email
+                                          address, username, unique personal
+                                          identifier, and gender. We use
+                                          Categories of Personal Information
+                                          described in the California Consumer
+                                          Records statute as set forth in the
+                                          <b
+                                            >‘How We Use and Share the
+                                            Information Collected’</b
+                                          >
+                                          section of this Policy.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b
+                                            >Internet or other electronic
+                                            network activity information:</b
+                                          >
+                                          We collect cookies as described above,
+                                          we will automatically receive
+                                          information from your browser and your
+                                          device, which includes the date and
+                                          time of your visit to the Platform as
+                                          well as your location, Internet
+                                          Protocol (IP) address, domain server,
+                                          browser type, access time, and data
+                                          about which pages you visit on the
+                                          Platform. We use Internet or other
+                                          electronic network activity
+                                          information as set forth in the “How
+                                          We Use and Share the Information
+                                          Collected” section of this Policy.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Geolocation data:</b> We may
+                                          collect your IP address. We may use
+                                          Geolocation Data as set forth in the
+                                          <b
+                                            >“How We Use and Share the
+                                            Information Collected”</b
+                                          >
+                                          section of this Policy.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b
+                                            >Audio, electronic, visual or
+                                            similar information:</b
+                                          >
+                                          We may collect your profile picture or
+                                          other audio or visual information
+                                          uploaded as content to the Platform.
+                                          We use audio, electronic, visual or
+                                          similar information as set forth in
+                                          the “How We Use and Share the
+                                          Information Collected” section of this
+                                          Policy.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Inferences:</b> We may make
+                                          inferences based upon the Personal
+                                          Information collected (such as
+                                          likelihood of retention or attrition).
+                                          We use Inference information as set
+                                          forth in the “How We Use and Share the
+                                          Information Collected” section of this
+                                          Policy.
+                                        </li>
+                                      </ol>
+                                    </li>
+                                    <br />
+                                    <br />
+                                    <li>
+                                      <b
+                                        >CCPA DATA PRACTICES DURING THE LAST 12
+                                        MONTHS:</b
+                                      >
+                                      <br /><br />
+                                      <ol type="a">
+                                        <li>
+                                          <b>Personal Information collected:</b>
+                                          As described in this Policy, we have
+                                          collected the categories of Personal
+                                          Information listed below during the
+                                          preceding 12 months:
+                                          <ul style="list-style-type: disc">
+                                            <li>Identifiers</li>
+                                            <li>
+                                              Characteristics of Personal
+                                              Information described in the
+                                              California Customer Records
+                                              statute
+                                            </li>
+                                            <li>
+                                              Internet or other electronic
+                                              network activity information
+                                            </li>
+                                            <li>Geolocation data</li>
+                                            <li>Commercial information</li>
+                                            <li>
+                                              Audio, electronic, visual,
+                                              thermal, olfactory, or similar
+                                              information Inferences
+                                            </li>
+                                          </ul>
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Categories of sources:</b> We have
+                                          collected the Personal Information
+                                          identified in this Policy from you and
+                                          our payment processors.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b
+                                            >Business and commercial purposes
+                                            for collecting:</b
+                                          >
+                                          We have collected the categories of
+                                          Personal Information listed above for
+                                          the following purposes:
+                                          <ul style="list-style-type: disc">
+                                            <li>Operate the Platform;</li>
+                                            <li>
+                                              Provide our Services to you;
+                                            </li>
+                                            <li>
+                                              Honor our Terms and Conditions and
+                                              contracts;
+                                            </li>
+                                            <li>
+                                              Ensure the privacy and security of
+                                              our Platform and Services;
+                                            </li>
+                                            <li>
+                                              Manage our relationships with you;
+                                            </li>
+                                            <li>Communicate with you;</li>
+                                            <li>
+                                              Analyze use of the Platform and
+                                              our Services;
+                                            </li>
+                                            <li>Enhance your experience;</li>
+                                            <li>
+                                              Track visits to the Platform;
+                                            </li>
+                                            <li>
+                                              Provide you with a more personal
+                                              and interactive experience on the
+                                              Platform; and
+                                            </li>
+                                            <li>Usage analytics purposes.</li>
+                                          </ul>
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Personal Information sold:</b> We
+                                          have not sold categories of Personal
+                                          Information during the preceding 12
+                                          months.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b
+                                            >Personal Information disclosed for
+                                            a business purpose:</b
+                                          >
+                                          We have disclosed for a business
+                                          purpose the categories of Personal
+                                          Information listed below during the
+                                          preceding 12 months:
+                                          <ul style="list-style-type: disc">
+                                            <li>Identifiers</li>
+                                            <li>
+                                              Characteristics of Personal
+                                              Information described in the
+                                              California Customer Records
+                                              statute
+                                            </li>
+                                            <li>
+                                              Internet or other electronic
+                                              network activity information
+                                            </li>
+                                            <li>Geolocation data</li>
+                                            <li>Commercial information</li>
+                                            <li>
+                                              Audio, electronic, visual,
+                                              thermal, olfactory, or similar
+                                              information Inferences
+                                            </li>
+                                          </ul>
+                                          <br />
+                                          We have disclosed each category of
+                                          Personal Information to the following
+                                          categories of third parties: (1)
+                                          corporate parents, subsidiaries, and
+                                          affiliates; (2) advisors (accountants,
+                                          attorneys); (3) service providers
+                                          (data analytics, data storage,
+                                          mailing, marketing, website and
+                                          platform administration, technical
+                                          support); and (4) operating systems
+                                          and platforms.
+                                        </li>
+                                      </ol>
+                                    </li>
+                                    <br />
+                                    <li>
+                                      <b
+                                        >CONSUMER RIGHTS AND REQUESTS UNDER THE
+                                        CCPA</b
+                                      >
+                                      <br /><br />
+                                      The CCPA gives consumers the right to
+                                      request that we (1) disclose what Personal
+                                      Information we collect, use, disclose, and
+                                      sell, and (2) delete certain Personal
+                                      Information that we have collected or
+                                      maintained. you may submit these requests
+                                      to us as described below, and we honor
+                                      these rights where they apply.
+                                      <br /><br />
+                                      If a request is submitted in a manner that
+                                      is not one of the designated methods for
+                                      submission, or if the request is deficient
+                                      in some manner unrelated to our
+                                      verification process, we will either (i)
+                                      treat the request as if it had been
+                                      submitted in accordance with the
+                                      designated manner, or (ii) provide you
+                                      with specific directions on how to submit
+                                      the request or remedy any deficiencies
+                                      with the request, as applicable.
+                                      <br /><br />
+                                      <ol type="a">
+                                        <li>
+                                          <b>Request to Know:</b> As a
+                                          California resident, you have the
+                                          right to request: (1) the specific
+                                          pieces of Personal Information we have
+                                          collected about you; (2) the
+                                          categories of Personal Information we
+                                          have collected about you; (3) the
+                                          categories of sources from which the
+                                          Personal Information is collected; (4)
+                                          the categories of Personal Information
+                                          about you that we have sold and the
+                                          categories of third parties to whom
+                                          the Personal Information was sold; (5)
+                                          the categories of Personal Information
+                                          about you that we disclosed for a
+                                          business purpose and the categories of
+                                          third parties to whom the Personal
+                                          Information was disclosed for a
+                                          business purpose; (6) the business or
+                                          commercial purpose for collecting,
+                                          disclosing, or selling Personal
+                                          Information; and (7) the categories of
+                                          third parties with whom we share
+                                          Personal Information. Our response
+                                          will cover the 12-month period
+                                          preceding our receipt of a verifiable
+                                          request.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Request to Delete:</b> As a
+                                          California resident, you have a right
+                                          to request the erasure/deletion of
+                                          certain Personal Information collected
+                                          or maintained by us. As described
+                                          herein, we will delete your Personal
+                                          Information from our records and
+                                          direct any service providers (as
+                                          defined under applicable law) to
+                                          delete your Personal Information from
+                                          their records. However, we are not
+                                          required to honor a deletion request
+                                          if an exemption applies under the law.
+                                        </li>
+                                        <br />
+                                        <li>
+                                          <b>Submitting a Request:</b> <br />
+                                          <ol>
+                                            <li>
+                                              <i>Submission of Instructions:</i>
+                                              You may submit a request to know
+                                              or to delete by email to the
+                                              address provided in the
+                                              ‘Grievances’ section above or by
+                                              submitting a request via mail to
+                                              address provided by us in our
+                                              Terms of Use or the Platform page.
+                                              Regarding requests to delete, we
+                                              may present you with the choice to
+                                              delete select portions of your
+                                              Personal Information, but a global
+                                              option to delete all Personal
+                                              Information will be offered and
+                                              more prominently presented.
+                                            </li>
+                                            <br />
+                                            <li>
+                                              <i>Verification Process:</i> We
+                                              are required by law to verify the
+                                              identities of those who submit
+                                              requests to know or to delete. To
+                                              determine whether the individual
+                                              making the request is the consumer
+                                              about whom we have collected
+                                              information, we will verify your
+                                              identity by matching the
+                                              identifying information provided
+                                              by you in the request to the
+                                              Personal Information that we
+                                              already maintain about you. As a
+                                              part of this process, you will be
+                                              required to provide your name and
+                                              email address, and mobile number
+                                              (if the same have been voluntarily
+                                              provided by you at the time of
+                                              registering on the Platform or
+                                              otherwise while using the
+                                              Platform). We will inform you if
+                                              we cannot verify your identity.
+                                              Please note- <br /><br />
+                                              <ol type="a">
+                                                <li>
+                                                  If we cannot verify the
+                                                  identity of the person making
+                                                  a request for categories of
+                                                  Personal Information, we may
+                                                  deny the request. If the
+                                                  request is denied in whole or
+                                                  in part for this reason, we
+                                                  will provide a copy of, or
+                                                  direct you to, our Privacy
+                                                  Policy.
+                                                </li>
+                                                <br />
+                                                <li>
+                                                  If we cannot verify the
+                                                  identity of the person making
+                                                  the request for specific
+                                                  pieces of Personal
+                                                  Information, we are prohibited
+                                                  from disclosing any specific
+                                                  pieces of Personal Information
+                                                  to the requestor. However, if
+                                                  denied in whole or in part for
+                                                  this reason, we will evaluate
+                                                  the request as if it is
+                                                  seeking the disclosure of
+                                                  categories of Personal
+                                                  Information about the
+                                                  consumer.
+                                                </li>
+                                                <br />
+                                                <li>
+                                                  If we cannot verify the
+                                                  identity of the person making
+                                                  a request to delete, we may
+                                                  deny the request. If there is
+                                                  no reasonable method by which
+                                                  we can verify the identity of
+                                                  the requestor to the degree of
+                                                  certainty required, we will
+                                                  state this in our response and
+                                                  explain why we have no
+                                                  reasonable method by which we
+                                                  can verify the identity of the
+                                                  requestor.
+                                                </li>
+                                              </ol>
+                                            </li>
+                                            <br />
+                                            <li>
+                                              <i>Authorized Agents:</i>
+                                              Authorized agents may submit
+                                              requests via the methods
+                                              identified in this Policy. If you
+                                              use an authorized agent to submit
+                                              a request to know or a request to
+                                              delete, we may require you to: (1)
+                                              provide the authorized agent with
+                                              signed permission to do so; (2)
+                                              verify your identity directly with
+                                              us; and (3) directly confirm with
+                                              us that you provided the
+                                              authorized agent permission to
+                                              submit the request. However, we
+                                              will not require these actions if
+                                              you have provided the authorized
+                                              agent with power of attorney
+                                              pursuant to the California Probate
+                                              Code.
+                                            </li>
+                                            <br />
+                                            <li>
+                                              <i>Excessive Requests:</i> If
+                                              requests from a User are
+                                              manifestly unfounded or excessive,
+                                              in particular because of their
+                                              repetitive character, we may
+                                              either (1) charge a reasonable
+                                              fee, or (2) refuse to act on the
+                                              request and notify the User of the
+                                              reason for refusing the request.
+                                              If we charge a fee, the amount
+                                              will be based upon the
+                                              administrative costs of providing
+                                              the information or communication
+                                              or taking the action requested.
+                                            </li>
+                                            <br />
+                                            <li>
+                                              <i>CCPA Non-Discrimination:</i>
+                                              You have the right not to receive
+                                              discriminatory treatment by us due
+                                              to your exercise of the rights
+                                              provided by the CCPA. We do not
+                                              offer financial incentives and
+                                              price or service differences, and
+                                              we do not discriminate against
+                                              Users/consumers for exercising
+                                              their rights under the CCPA.
+                                            </li>
+                                          </ol>
+                                        </li>
+                                      </ol>
+                                    </li>
+                                  </ol>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <style>
+                      .privacy-content {
+                        text-align: left;
+                        font-size: 18px;
+                        line-height: 1.6;
+                        color: rgb(4, 3, 57);
+                        letter-spacing: 0.16px;
+                      }
+
+                      .privacy-content a {
+                        color: #317ae7 !important;
+                        text-decoration: none;
+                      }
+
+                      .privacy-content ol {
+                        text-align: left;
+                        font-size: 18px;
+                        line-height: 1.6;
+                        color: rgb(4, 3, 57);
+                        letter-spacing: 0.16px;
+                      }
+
+                      .privacy-content li {
+                        text-align: left;
+                        font-size: 18px;
+                        line-height: 1.6;
+                        color: rgb(4, 3, 57);
+                        letter-spacing: 0.16px;
+                      }
+                    </style>
+                  </div>
+                  <!-- Modal footer -->
+                  <div
+                    class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600"
+                  >
+                    <button
+                      data-modal-hide="privacy-policy"
+                      type="button"
+                      class="text-white bg-primary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                    >
+                      I accept
+                    </button>
+                    <!-- <button data-modal-hide="privacy-policy" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Decline</button> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div
+              data-modal-target="refund-policy"
+              data-modal-toggle="refund-policy"
+              class="mb-0 md:mb-0 text-16 leading-none text-white font-medium cursor-pointer"
+            >
+              Refund Policy
+            </div>
+            <div
+              id="refund-policy"
+              tabindex="-1"
+              aria-hidden="true"
+              class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full"
+              style="z-index: 1000"
+            >
+              <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow">
+                  <!-- Modal header -->
+                  <div
+                    class="flex items-center justify-between p-4 border-b rounded-t"
+                  >
+                    <h3
+                      class="text-xl font-semibold"
+                      style="color: rgb(4, 3, 57)"
+                    >
+                      Refund Policy
+                    </h3>
+                    <button
+                      type="button"
+                      class="p-2 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm ml-auto inline-flex justify-center items-center"
+                      data-modal-hide="refund-policy"
+                    >
+                      <svg
+                        class="w-2 h-2"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 14 14"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
+                        />
+                      </svg>
+                      <span class="sr-only">Close modal</span>
+                    </button>
+                  </div>
+                  <!-- Modal body -->
+                  <div class="p-6 space-y-6">
+                    <!-- <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                          With less than a month to go before the European Union enacts new consumer privacy laws for its citizens, companies around the world are updating their terms of service agreements to comply.
+                      </p>
+                      <p class="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+                          The European Union’s General Data Protection Regulation (G.D.P.R.) goes into effect on May 25 and is meant to ensure a common set of data rights in the European Union. It requires organizations to notify users as soon as possible of high-risk data breaches that could personally affect them.
+                      </p> -->
+
+                    <div class="containerBody is-wrapper clearfix" style="">
+                      <div
+                        data-cat="1"
+                        class="is-section is-box is-section-100"
+                        id="1695634896302"
+                      >
+                        <div class="is-boxes">
+                          <div class="is-box-centered">
+                            <div
+                              class="is-container container"
+                              style="max-width: 1020px"
+                            >
+                              <div class="row clearfix">
+                                <!-- <div class="column full center"> 
+                              <h2 style="text-align: left; font-size: 28px; font-weight: 900; line-height: 1.1; color: rgb(10, 9, 89); margin-bottom: 20px;">Refund Policy</h2> 
+                             </div>  -->
+                              </div>
+                              <div class="row clearfix">
+                                <div class="column full" spellcheck="false">
+                                  <p
+                                    style="
+                                      font-size: 18px;
+                                      font-weight: 400;
+                                      line-height: 1.6;
+                                      letter-spacing: 0.16px;
+                                      color: rgb(4, 3, 57);
+                                      margin-bottom: 30px;
+                                    "
+                                  >
+                                    In the world of strict no-refund policies,
+                                    we have a
+                                    <strong
+                                      >no-questions-asked refund policy.</strong
+                                    >
+                                  </p>
+                                  <p
+                                    style="
+                                      font-size: 18px;
+                                      font-weight: 400;
+                                      line-height: 1.6;
+                                      letter-spacing: 0.16px;
+                                      color: rgb(4, 3, 57);
+                                      margin-bottom: 30px;
+                                    "
+                                  >
+                                    All you have to do is email us at
+                                    support@learnyard.com and make sure that you
+                                    do it within 7 days of the respective course
+                                    start date.
+                                  </p>
+                                  <p>
+                                    Note that if purchased a course after it
+                                    already started, we'll issue a refund if you
+                                    reach out at support@learnyard.com via email
+                                    or message the moderator on discord within 7
+                                    days of purchase. <br />
+                                    Please note that we're not liable to provide
+                                    you a refund if you reach out after 168
+                                    hours (i.e. 24*7 hrs) have passed since the
+                                    course purchase.
+                                  </p>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Modal footer -->
+                  <!-- <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                    <button data-modal-hide="refund-policy" type="button" class="text-white bg-primary  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">I accept</button>
+                      <button data-modal-hide="defaultModal" type="button" class="text-gray-500 bg-white hover:bg-gray-100 focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-lg border border-gray-200 text-sm font-medium px-5 py-2.5 hover:text-gray-900 focus:z-10 dark:bg-gray-700 dark:text-gray-300 dark:border-gray-500 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-600">Decline</button>
+                  </div> -->
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <ul class="flex items-center justify-start md:justify-center">
+        <li class="mb-0 mr-[33px]">
+          <a href="#!">
+            <img loading="lazy" width="26" height="26"
+              src="https://d3fu8elvld6rb5.cloudfront.net/learnyard.com/img/learnyard/footer/youtube.svg"
+              alt="youtube" />
+          </a>
+        </li>
+        <li class="mb-0 mr-[33px]">
+          <a href="#!">
+            <img loading="lazy" width="26" height="26"
+              src="https://d3fu8elvld6rb5.cloudfront.net/learnyard.com/img/learnyard/footer/fb.svg" alt="facebook" />
+          </a>
+        </li>
+        <li class="mb-0 mr-[33px]">
+          <a href="#!">
+            <img loading="lazy" width="26" height="26"
+              src="https://d3fu8elvld6rb5.cloudfront.net/learnyard.com/img/learnyard/footer/insta.svg"
+              alt="instagram" />
+          </a>
+        </li>
+        <li class="mb-0 mr-[33px]">
+          <a href="#!">
+            <img loading="lazy" width="26" height="26"
+              src="https://d3fu8elvld6rb5.cloudfront.net/learnyard.com/img/learnyard/footer/linkedin.svg"
+              alt="linkedin" />
+          </a>
+        </li>
+        <li class="mb-0 mr-[33px]">
+          <a href="#!">
+            <img loading="lazy" width="26" height="26"
+              src="https://d3fu8elvld6rb5.cloudfront.net/learnyard.com/img/learnyard/footer/twitter.svg"
+              alt="twitter" />
+          </a>
+        </li>
+        <li class="mb-0">
+          <a href="#!">
+            <img loading="lazy" width="26" height="26"
+              src="https://d3fu8elvld6rb5.cloudfront.net/learnyard.com/img/learnyard/footer/telegram.svg"
+              alt="telegram" />
+          </a>
+        </li>
+      </ul> -->
+          <span
+            class="flex items-center justify-start md:justify-center text-white/50"
+          >
+            Copyright © 2023
+          </span>
+        </div>
+      </section>
+    </footer>
+
+    <script src="https://d3fu8elvld6rb5.cloudfront.net/learnyard.com/react/practice/bundled-files/bundle.js"></script>
+    <!-- <script src="../src/react/practice/final/bundle.js"></script> -->
+
+    <script src="https://embed.typeform.com/next/embed.js"></script>
+
+    <script src="https://d3fu8elvld6rb5.cloudfront.net/learnyard.com/js/tiny-slider.js"></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/@dotlottie/player-component@2.3.0/dist/dotlottie-player.mjs"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
+
+    <script src="https://d3fu8elvld6rb5.cloudfront.net/learnyard.com/js/wow.min.js"></script>
+    <script src="https://d3fu8elvld6rb5.cloudfront.net/learnyard.com/js/app.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const toggleButton = document.getElementById("toggleMenu");
+        const dropdowns = document.querySelectorAll(".md\\:hidden > ul");
+
+        toggleButton?.addEventListener("click", function () {
+          dropdowns.forEach((dropdown) => {
+            dropdown.classList.toggle("hidden");
+          });
+        });
+      });
+    </script>
+
+    <script>
+      const lottieContainer = document.getElementById("lottie-container");
+      const cardContainer = document.getElementById("cardContainer");
+      const cardContainer2 = document.getElementById("cardContainer2");
+      const cardContainer3 = document.getElementById("cardContainer3");
+      const lottieOne = document.getElementById("lottie-one");
+      const lottieTwo = document.getElementById("lottie-two");
+      const lottieThree = document.getElementById("lottie-three");
+
+      cardContainer?.addEventListener("mouseenter", function () {
+        lottieOne.setDirection(1);
+        lottieOne.setSpeed(1);
+        lottieOne.play();
+      });
+
+      cardContainer?.addEventListener("mouseleave", function () {
+        setTimeout(() => {
+          lottieOne.pause();
+        }, 500);
+      });
+      cardContainer2?.addEventListener("mouseenter", function () {
+        lottieTwo.setDirection(1);
+        lottieTwo.setSpeed(1);
+        lottieTwo.play();
+      });
+
+      cardContainer2?.addEventListener("mouseleave", function () {
+        setTimeout(() => {
+          lottieTwo.pause();
+        }, 500);
+      });
+      cardContainer3?.addEventListener("mouseenter", function () {
+        lottieThree.setDirection(1);
+        lottieThree.setSpeed(1);
+        lottieThree.play();
+      });
+
+      cardContainer3?.addEventListener("mouseleave", function () {
+        setTimeout(() => {
+          lottieThree.pause();
+        }, 500);
+      });
+    </script>
+
+    <script>
+      // loader animation
+      const addoverflow = () => {
+        document.body.classList.add("overflow-hidden");
+      };
+
+      addoverflow();
+
+      const loaderWrapper = document.querySelector(".loader-wrapper");
+      const loaderContainer = document.getElementById("loader-container");
+      const logoMain = document.querySelector(".logo-main");
+      // const loaderAnim = bodymovin.loadAnimation({
+      //   container: loaderContainer,
+      //   path: 'https://d3fu8elvld6rb5.cloudfront.net/learnyard.com/img/loader.json',
+      //   render: 'svg',
+      //   loop: true,
+      //   autoplay: true,
+      // });
+
+      document.addEventListener("DOMContentLoaded", (event) => {
+        setTimeout(() => {
+          document.body.classList.add("page-loaded");
+          document.body.classList.remove("overflow-hidden");
+          // loaderAnim.stop();
+        }, 1000);
+      });
+
+      // loaderWrapper.addEventListener('mouseenter', function () {
+      //   loaderAnim.play();
+      //   logoMain.classList.add('opacity-0');
+      // });
+
+      // loaderWrapper.addEventListener('mouseleave', function () {
+      //   loaderAnim.stop();
+      //   logoMain.classList.remove('opacity-0');
+      // });
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-8J4WF84KFX"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-8J4WF84KFX");
+    </script>
+  </body>
+</html>
